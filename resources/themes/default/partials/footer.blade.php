@@ -2,8 +2,8 @@
     <div class="container pt-60 pb-30">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
-          {{--  <img src="{{ Theme::asset('images/logo-wide-white.png') }}" alt="">  --}}
-          <p class="font-36 mt-20 mb-20">March Animal Foundation</p>
+           <img src="{{ Theme::asset('images/logo-wide-white.png') }}" alt=""> 
+          {{-- <p class="font-36 mt-20 mb-20">March Animal Foundation</p> --}}
           <p class="font-12 mt-20 mb-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
           <ul class="styled-icons flat medium list-inline mb-20">
             <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
@@ -23,11 +23,11 @@
         </div>
       </div>  --}}
     </div>
-   {{--   <div class="container-fluid p-20" data-bg-color="#ddd">
+     <div class="container-fluid p-20" data-bg-color="#ddd">
       <div class="row text-center">
         <div class="col-md-12">
-          <p class="font-11 m-0" data-text-color="#555">Copyright &copy;2015 <a class="font-11" href="#">ThemeMascot</a>. All Rights Reserved</p>
+          <p class="font-11 m-0" data-text-color="#555">Copyright &copy;2018 <a class="font-11" href="#">March Animal Foundation</a>. All Rights Reserved</p>
         </div>
       </div>
-    </div>  --}}
+    </div> 
   </footer>

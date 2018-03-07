@@ -38,21 +38,22 @@
               <div class="contact-info text-center">
                 <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
                 <h4>Call Us</h4>
-                <h6 class="text-gray">Phone: +62 851 0156 1352</h6>
+                <h6 class="text-gray">Phone: +62 858 6677 8889</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
                 <h4>Address</h4>
-                <h6 class="text-gray">Jl. Kelapa Dua Wetan. Perum Cibubur Indah V Blok S1 No.5 Kel. Kelapa Dua Wetan. Kecamatan Ciracas Jakarta Timur</h6>
+                <h6 class="text-gray">Komp. Ruko Kirana Mas No.6, Jl. Letda Nasir Raya Rt.09/03
+                  Bojong Kulur, Gunung Putri. Bogor</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
                 <h4>Email</h4>
-                <h6 class="text-gray">marchanimalclinic@gmail.com</h6>
+                <h6 class="text-gray">marchanimalfoundation@gmail.com</h6>
               </div>
             </div>
           </div>
@@ -133,7 +134,7 @@
 
           </div>
           <div class="col-md-5">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7930.75831869607!2d106.887948!3d-6.34492!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ece78a596707%3A0x10b9f8a996f32f2!2sGg.+Sepakat%2C+Klp.+Dua+Wetan%2C+Ciracas%2C+Kota+Jakarta+Timur%2C+Daerah+Khusus+Ibukota+Jakarta+13730!5e0!3m2!1sen!2sid!4v1520315184738" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.479758321521!2d106.96720901435378!3d-6.331834395417738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69925245f94e89%3A0x48932bb824053493!2sJl.+Letda+M.Natsir%2C+Bojong+Kulur%2C+Gn.+Putri%2C+Bogor%2C+Jawa+Barat+16969!5e0!3m2!1sen!2sid!4v1520436601067" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             {{--  
               <!-- Google Map HTML Codes -->
             <div 

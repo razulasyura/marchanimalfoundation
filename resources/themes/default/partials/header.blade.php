@@ -15,9 +15,9 @@
           <div class="col-md-8">
             <div class="widget no-border m-0">
               <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">+62 851 0156 1352</a> </li>
-                <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Fri 8:00 to 2:00 </li>
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">marchanimalclinic@gmail.com</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">+62 858 6677 8889</a> </li>
+                <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Fri 9:00 to 17:00 </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">marchanimalfoundation@gmail.com</a> </li>
               </ul>
             </div>
           </div>
@@ -26,7 +26,7 @@
               <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
                 <li class="mt-sm-10 mb-sm-10">
                   <!-- Modal: Appointment Starts -->
-                  <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="#">Donate Now</a>
+                  {{-- <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="#">Donate Now</a> --}}
                 </li>
                 <li class="mt-sm-10 mb-sm-10">
                   <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="#">Join Us</a>
@@ -49,14 +49,14 @@
             <div class="widget no-border m-0">
               <div class="mt-10 mb-10 text-right flip sm-text-center">
                 <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-envelope text-theme-colored font-18"></i> Mail Us Today</div>
-                <a class="font-12 text-gray" href="#"> marchanimalclinic@gmail.com</a>
+                <a class="font-12 text-gray" href="#"> marchanimalfoundation@gmail.com</a>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-2">
             <div class="widget no-border m-0">
               <div class="mt-10 mb-10 text-right flip sm-text-center">
-                <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-phone-square text-theme-colored font-18"></i> +62 851 0156 1352</div>
+                <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-phone-square text-theme-colored font-18"></i> +62 858 6677 8889</div>
                 <a class="font-12 text-gray" href="#">Call us for more details!</a>
               </div>
             </div>
@@ -65,7 +65,7 @@
             <div class="widget no-border m-0">
               <div class="mt-10 mb-10 text-right flip sm-text-center">
                 <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-building-o text-theme-colored font-18"></i> Location</div>
-                <a class="font-12 text-gray" href="#"> Jakarta Timur, Indonesia</a>
+                <a class="font-12 text-gray" href="#"> Bogor, Indonesia</a>
               </div>
             </div>
           </div>
@@ -82,19 +82,19 @@
                 <ul class="dropdown">
                   <li><a href="{{ url('about') }}">About</a></li>
                   <li><a href="{{ url('organizer') }}">Organizer</a></li>
-                  <li><a href="{{ url('volunteer') }}">Volunteer</a></li>
+                  {{-- <li><a href="{{ url('volunteer') }}">Volunteer</a></li> --}}
                   <li><a href="{{ url('vetenarian') }}">Vetenarian</a></li>
                 </ul>
               </li>
               <li><a href="{{ url('event') }}">Event</a></li>
-              <li><a href="{{ url('adoption') }}">Adoption</a></li>
+              <li><a href="{{ url('volunteer') }}">volunteer</a></li>
               <li><a href="{{ url('gallery') }}">Gallery</a></li>
-              <li><a href="{{ url('blog') }}">Blog</a></li>
+              <li><a href="{{ url('blog') }}">Article</a></li>
               <li><a href="{{ url('contact') }}">Contact</a></li>
             </ul>
             <ul class="list-inline pull-right flip hidden-sm hidden-xs">
               <li>
-                <a class="btn btn-colored btn-flat btn-theme-colored mt-15 ajaxload-popup" href="#" >Donate Now</a>
+                {{-- <a class="btn btn-colored btn-flat btn-theme-colored mt-15 ajaxload-popup" href="#" >Donate Now</a> --}}
               </li>
               <li>
                 <a class="btn btn-colored btn-flat btn-theme-colored mt-15 ajaxload-popup" href="#" >Join Us</a>

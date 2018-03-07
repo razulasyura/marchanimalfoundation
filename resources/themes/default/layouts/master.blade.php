@@ -13,11 +13,11 @@
 <title>March Animal Foundation - Share Our Love</title>
 
 <!-- Favicon and Touch Icons -->
-<link href="{{ Theme::asset('images/favicon.png') }}" rel="shortcut icon" type="image/png">
+{{-- <link href="{{ Theme::asset('images/favicon.png') }}" rel="shortcut icon" type="image/png">
 <link href="{{ Theme::asset('images/apple-touch-icon.png') }}" rel="apple-touch-icon">
 <link href="{{ Theme::asset('images/apple-touch-icon-72x72.png') }}" rel="apple-touch-icon" sizes="72x72">
 <link href="{{ Theme::asset('images/apple-touch-icon-114x114.png') }}" rel="apple-touch-icon" sizes="114x114">
-<link href="{{ Theme::asset('images/apple-touch-icon-144x144.png') }}" rel="apple-touch-icon" sizes="144x144">
+<link href="{{ Theme::asset('images/apple-touch-icon-144x144.png') }}" rel="apple-touch-icon" sizes="144x144"> --}}
 
 <!-- Stylesheet -->
 <link href="{{ Theme::asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -67,13 +67,13 @@
 <body class="">
 <div id="wrapper">
   <!-- preloader -->
-  {{--  <div id="preloader">
+   {{-- <div id="preloader">
     <div id="spinner">
       <i class="flaticon-charity-shelter font-60 text-theme-colored floating"></i>
       <h5 class="line-height-50 font-18">Loading...</h5>
     </div>
     <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
-  </div>  --}}
+  </div> --}} 
 
   <!-- Header -->
   @include('partials.header')
