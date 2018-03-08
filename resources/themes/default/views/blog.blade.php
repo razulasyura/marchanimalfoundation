@@ -46,13 +46,14 @@
                       </div>
                       <div class="media-body pl-15">
                         <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="blog-single-right-sidebar.html">Post title here</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>                       
+                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">KERACUNAN PARACETAMOL (INTOKSIKASI PARACETAMOL) PADA KUCING</a></h4>
+                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>
+                         {{--   <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
+                          <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>    --}}                     
                         </div>
                       </div>
                     </div>
-                    <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                    <p class="mt-10">Pernahkan kucing anda mengalami demam dan anda ingin menurunkan panasnya dengan obat manusia seperti paracetamol atau acetaminophen? Setelah pemberian obat tersebut, kucing menjadi muntah dan wajah bengkak. Tahukah anda jika paracetamol berbahaya bagi kucing? Kali ini, saya akan membahas keracunan acetaminophen atau yang sering dikenal dengan paracetamol pada kucing untuk para penyayang hewan semua.</p>
                     <a href="{{ url('blog_detail') }}" class="btn-read-more">Read more</a>
                     <div class="clearfix"></div>
                   </div>
