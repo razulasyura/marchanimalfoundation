@@ -123,7 +123,7 @@ class FrontController extends Controller
         // Load Theme
         Theme::init($this->theme);
         // Page Title & Description
-        $page_title = "Team";
+        $page_title = "volunteer";
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
@@ -226,20 +226,6 @@ class FrontController extends Controller
         return view(strtolower($page_title), compact('page_title','breadcrumbs'));
     }
 
-    public function vetenarian()
-    {
-        // Load Theme
-        Theme::init($this->theme);
-        // Page Title & Description
-        $page_title = "vetenarian";
-        $page_description = "This is".$page_title." page";
-        // SEO
-        $this->_seo($page_title,$page_description);
-        // Breadcrumb
-        $breadcrumbs = $this->_breadcrumbs($page_title);
-        // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
-    }
 
  
     /**
