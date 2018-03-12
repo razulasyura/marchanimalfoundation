@@ -8,7 +8,7 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2 class="title">Blog</h2>
+              <h2 class="title">Article</h2>
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pages</a></li>
@@ -46,7 +46,7 @@
                       </div>
                       <div class="media-body pl-15">
                         <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">KERACUNAN PARACETAMOL (INTOKSIKASI PARACETAMOL) PADA KUCING</a></h4>
+                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="{{ url('blog_detail') }}">KERACUNAN PARACETAMOL (INTOKSIKASI PARACETAMOL) PADA KUCING</a></h4>
                           <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>
                          {{--   <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
                           <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>    --}}                     
