@@ -28,23 +28,23 @@
             <ul>
               <li>
                 <h5>Topics:</h5>
-                <p>Topic Name</p>
+                <p>Bakti Sosial Sumedang</p>
               </li>
               <li>
                 <h5>Host:</h5>
-                <p>Host Name</p>
+                <p>Drh. Ani Siti Nuraini</p>
               </li>
               <li>
                 <h5>Location:</h5>
-                <p>Location Name</p>
+                <p>Arins Pet Care Sumedang</p>
               </li>
               <li>
                 <h5>Start Date:</h5>
-                <p>January 26, 2017</p>
+                <p>16 April 2016</p>
               </li>
               <li>
                 <h5>End Date:</h5>
-                <p>January 27, 2017</p>
+                <p>17 April 2016</p>
               </li>
               <li>
                 <h5>Share:</h5>

@@ -34,21 +34,21 @@
                 </div>
                 <div class="col-sm-4 pl-0 pl-sm-15">
                   <div class="event-details p-15 mt-20">
-                    <h4 class="mt-0 text-uppercase font-weight-500">Event Name</h4>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante Nulla vel metus scelerisque ante.</p>
-                    <a href="{{ url('event_detail') }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                    <h4 class="mt-0 text-uppercase font-weight-500">Bakti Sosial Sumedang</h4>
+                    <p>Pada tanggal 16-17 april 2016 yayasan MAF mengadakan bakti social di Sumedang, Jawa Barat. Adapun kegiatan yang dilakukan berupa sterilisasi kucing betina dan kastrasi kucing jantan dengan biaya bersubsidi.</p>
+                    <a href="#" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="event-count p-15 mt-15">
                     <ul class="event-date list-inline font-16 text-uppercase mt-10 mb-20">
-                      <li class="p-15 mr-5 bg-lightest">Dec</li>
-                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 31</li>
-                      <li class="p-15 bg-lightest">2017</li>
+                      <li class="p-15 mr-5 bg-lightest">Apr</li>
+                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 16</li>
+                      <li class="p-15 bg-lightest">2016</li>
                     </ul>
                     <ul>
                       
-                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> Location Event</a></li>
+                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> Arins Pet Care</a></li>
                     </ul>
                   </div>
                 </div>
@@ -63,21 +63,21 @@
                 </div>
                 <div class="col-sm-4 pl-0 pl-sm-15">
                   <div class="event-details p-15 mt-20">
-                    <h4 class="mt-0 text-uppercase font-weight-500">Event Name</h4>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante Nulla vel metus scelerisque ante.</p>
-                    <a href="{{ url('event_detail') }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                    <h4 class="mt-0 text-uppercase font-weight-500">Bakti Sosial Majalengka</h4>
+                    <p>Pada tanggal 4-5 Juni 2016 yayasan MAF mengadakan bakti sosial di Majalengka, Jawa Barat. Adapun kegiatan yang dilakukan berupa sterilisasi kucing betina dan kastrasi kucing jantan dengan biaya bersubsidi bagi pemilik hewan dengan ketidakmampuan finansial dan khusus kucing domestik.</p>
+                    <a href="#" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="event-count p-15 mt-15">
                     <ul class="event-date list-inline font-16 text-uppercase mt-10 mb-20">
-                      <li class="p-15 mr-5 bg-lightest">Dec</li>
-                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 31</li>
-                      <li class="p-15 bg-lightest">2017</li>
+                      <li class="p-15 mr-5 bg-lightest">Jun</li>
+                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 4</li>
+                      <li class="p-15 bg-lightest">2016</li>
                     </ul>
                     <ul>
                       
-                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> Location Event</a></li>
+                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> Tempat Prakter drh. Kresna</a></li>
                     </ul>
                   </div>
                 </div>
@@ -92,21 +92,21 @@
                 </div>
                 <div class="col-sm-4 pl-0 pl-sm-15">
                   <div class="event-details p-15 mt-20">
-                    <h4 class="mt-0 text-uppercase font-weight-500">Event Name</h4>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante Nulla vel metus scelerisque ante.</p>
-                    <a href="{{ url('event_detail') }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                    <h4 class="mt-0 text-uppercase font-weight-500">Baksi Sosial Klaten</h4>
+                    <p>Pada tanggal 24-25 September 2016 yayasan MAF mengadakan bakti sosial di Klaten, Jawa Tengah. Adapun kegiatan yang dilakukan berupa sterilisasi kucing betina dan kastrasi kucing jantan dengan biaya bersubsidi</p>
+                    <a href="#" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="event-count p-15 mt-15">
                     <ul class="event-date list-inline font-16 text-uppercase mt-10 mb-20">
-                      <li class="p-15 mr-5 bg-lightest">Dec</li>
-                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 31</li>
-                      <li class="p-15 bg-lightest">2017</li>
+                      <li class="p-15 mr-5 bg-lightest">Sep</li>
+                      <li class="p-15 pl-20 pr-20 mr-5 bg-lightest"> 24</li>
+                      <li class="p-15 bg-lightest">2016</li>
                     </ul>
                     <ul>
                       
-                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> Location Event</a></li>
+                      <li><a href="#"><i class="fa fa-map-marker mr-5"></i> ABC Clinict</a></li>
                     </ul>
                   </div>
                 </div>
@@ -116,14 +116,14 @@
               <div class="col-sm-12">
                 <nav>
                   <ul class="pagination theme-colored pull-right xs-pull-center mb-xs-40">
-                    <li> <a href="{{ url('event_detail') }}" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
+                    <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
                     <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
                     <li><a href="#">...</a></li>
-                    <li> <a href="{{ url('event_detail') }}" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
+                    <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
                   </ul>
                 </nav>
               </div>

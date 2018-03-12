@@ -4,7 +4,7 @@
         <div class="col-md-6 col-md-offset-3 text-center">
            <img src="{{ Theme::asset('images/logo-wide-white.png') }}" alt=""> 
           {{-- <p class="font-36 mt-20 mb-20">March Animal Foundation</p> --}}
-          <p class="font-12 mt-20 mb-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+          <p class="font-20 mt-20 mb-20">Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan</p>
           <ul class="styled-icons flat medium list-inline mb-20">
             <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
             <li><a href="#"><i class="fa fa-twitter"></i></a> </li>

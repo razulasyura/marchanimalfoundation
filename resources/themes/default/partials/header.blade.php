@@ -29,7 +29,7 @@
                   {{-- <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="#">Donate Now</a> --}}
                 </li>
                 <li class="mt-sm-10 mb-sm-10">
-                  <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10 ajaxload-popup" href="#">Join Us</a>
+                  <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10" href="http://bit.ly/MAFregistrasi" target="_blank">Join Us</a>
                 </li>
               </ul>
             </div>
@@ -98,7 +98,7 @@
                 {{-- <a class="btn btn-colored btn-flat btn-theme-colored mt-15 ajaxload-popup" href="#" >Donate Now</a> --}}
               </li>
               <li>
-                <a class="btn btn-colored btn-flat btn-theme-colored mt-15 ajaxload-popup" href="#" >Join Us</a>
+                <a class="btn btn-colored btn-flat btn-theme-colored mt-15" href="http://bit.ly/MAFregistrasi" target="_blank" >Join Us</a>
               </li>
             </ul>
           </nav>

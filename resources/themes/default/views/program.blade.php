@@ -43,7 +43,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                  <p class="mt-10">MAF memberikan penyuluhan edukasi terhadap anak-anak sekolah untuk menumbuhkan pengetahuan tentang hewan dan rasa sayang terhadap hewan.</p>
                   <a href="#" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
@@ -66,7 +66,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                  <p class="mt-10">Melalui kerja sama dengan dokter hewan praktek dan dinas di daerah, yayasan kami memberikan pelayanan sterilisasi dan vaksinasi anjing-kucing dengan harga subsidi khusus hewan domestic.</p>
                   <a href="#" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
@@ -89,7 +89,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                  <p class="mt-10">Program ini memberikan bantuan potongan biaya sebesar 50% untuk biaya operasi bagi shelter atau tempat panti asuhan hewan.</p>
                   <a href="#" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
@@ -112,7 +112,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                  <p class="mt-10">Yayasan kami bergerak dalam membantu satwa yang terlantar, yang berada dalam keadaan bahaya atau membutuhkan pertolongan medis.</p>
                   <a href="#" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
@@ -135,7 +135,8 @@
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
+                  <p class="mt-10">Pembiayaan Medis Pasien Gratis
+Yayasan kami memberikan kesempatan bagi 5 (lima) pasien yang tidak memiliki finansial dalam pemberian pengobatan maupun tindakan bedah yang menjadi pasien di March animal clinic</p>
                   <a href="#" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
