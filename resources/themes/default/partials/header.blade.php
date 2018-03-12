@@ -83,13 +83,14 @@
                   <li><a href="{{ url('about') }}">About</a></li>
                   <li><a href="{{ url('organizer') }}">Organizer</a></li>
                   {{-- <li><a href="{{ url('volunteer') }}">Volunteer</a></li> --}}
-                  <li><a href="{{ url('vetenarian') }}">Vetenarian</a></li>
                 </ul>
               </li>
+              <li><a href="{{ url('program') }}">Program</a></li>
               <li><a href="{{ url('event') }}">Event</a></li>
-              <li><a href="{{ url('volunteer') }}">volunteer</a></li>
-              <li><a href="{{ url('gallery') }}">Gallery</a></li>
               <li><a href="{{ url('blog') }}">Article</a></li>
+              {{--  <li><a href="{{ url('vetenarian') }}">Vetenarian</a></li>  --}}
+              <li><a href="{{ url('volunteer') }}">Volunteer</a></li>              
+              <li><a href="{{ url('gallery') }}">Gallery</a></li>                        
               <li><a href="{{ url('contact') }}">Contact</a></li>
             </ul>
             <ul class="list-inline pull-right flip hidden-sm hidden-xs">

@@ -1,94 +1,68 @@
 @extends('layouts.master')
 
 @section('content')
+  <!-- Start main-content -->
+
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="{{ Theme::asset('images/img-breadcrumb-5.jpg') }}">
-      <div class="container pt-60 pb-60">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
+      <div class="container pt-100 pb-50">
         <!-- Section Content -->
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2 class="title">About Us</h2>
-              <ol class="breadcrumb text-center text-black mt-10">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
-                <li class="active text-theme-colored">Page Title</li>
-              </ol>
+        <div class="section-content pt-100">
+          <div class="row"> 
+            <div class="col-md-12">
+              <h3 class="title text-white">About</h3>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Section: About -->
-    <section id="about2">
+    <section> 
       <div class="container">
-        <div class="section-content">
-          <div class="row mt-10">
-            <div class="col-sm-5 col-md-3 mb-sm-20">
-              <h3 class="text-uppercase letter-space-1 mt-0">We are March Animal Foundation<span class="text-theme-colored">  Share Our Love.</span></h3>
-              <p class="lead mt-20 mb-30">Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit, tenetur sequi expedita earum nobis optio tempora id repellendus?</p>
-              <a href="#" class="btn btn-colored btn-theme-colored btn-sm">View Details</a>
-            </div>
-            <div class="col-sm-7 col-md-9">
-              <div class="owl-carousel-3col">
-                <div class="item">
-                  <div class="box-hover-effect effect1 mb-sm-30">
-                    <div class="thumb"> <a href="#"><img class="img-fullwidth mb-20" src="{{ Theme::asset('images/img-program-1.jpg') }}" alt="..."></a> </div>
-                    <div class="caption">
-                      <h4 class="text-uppercase letter-space-1 mt-0">School<span class="text-theme-colored"> Education</span></h4>
-                       <p>Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit eligendi</p>
-                      <p><a href="#" class="btn btn-theme-colored btn-flat mt-10 btn-sm" role="button">Read More</a></p>
-                    </div>
-                  </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-7">
+          <div class="owl-carousel-1col" data-dots="true">
+              <div class="item">
+                <div class="thumb">
+                  <img src="http://placehold.it/1920x1280" alt="">
                 </div>
-                <div class="item">
-                  <div class="box-hover-effect effect1 mb-sm-30">
-                    <div class="thumb"> <a href="#"><img class="img-fullwidth mb-20" src="{{ Theme::asset('images/img-program-2.jpg') }}" alt="..."></a> </div>
-                    <div class="caption">
-                      <h4 class="text-uppercase letter-space-1 mt-0">Sterilization and vaccination<span class="text-theme-colored"> With Subsidy</span></h4>
-                       <p>Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit eligendi</p>
-                      <p><a href="#" class="btn btn-theme-colored btn-flat mt-10 btn-sm" role="button">Read More</a></p>
-                    </div>
-                  </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <img src="http://placehold.it/1920x1280" alt="">
                 </div>
-                <div class="item">
-                  <div class="box-hover-effect effect1 mb-sm-30">
-                    <div class="thumb"> <a href="#"><img class="img-fullwidth mb-20" src="{{ Theme::asset('images/img-program-1.jpg') }}" alt="..."></a> </div>
-                    <div class="caption">
-                      <h4 class="text-uppercase letter-space-1 mt-0">Shelter<span class="text-theme-colored">  Medical Services</span></h4>
-                       <p>Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit eligendi</p>
-                      <p><a href="#" class="btn btn-theme-colored btn-flat mt-10 btn-sm" role="button">Read More</a></p>
-                    </div>
-                  </div>
+              </div>
+              <div class="item">
+                <div class="thumb">
+                  <img src="http://placehold.it/1920x1280" alt="">
                 </div>
-                <div class="item">
-                  <div class="box-hover-effect effect1 mb-sm-30">
-                    <div class="thumb"> <a href="#"><img class="img-fullwidth mb-20" src="{{ Theme::asset('images/img-program-3.jpg') }}" alt="..."></a> </div>
-                    <div class="caption">
-                      <h4 class="text-uppercase letter-space-1 mt-0">Animal<span class="text-theme-colored"> Relief</span></h4>
-                       <p>Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit eligendi</p>
-                      <p><a href="#" class="btn btn-theme-colored btn-flat mt-10 btn-sm" role="button">Read More</a></p>
-                    </div>
-                  </div>
-                </div>
-                 <div class="item">
-                  <div class="box-hover-effect effect1 mb-sm-30">
-                    <div class="thumb"> <a href="#"><img class="img-fullwidth mb-20" src="{{ Theme::asset('images/img-program-4.jpg') }}" alt="..."></a> </div>
-                    <div class="caption">
-                      <h4 class="text-uppercase letter-space-1 mt-0">Adoption<span class="text-theme-colored"> Pet</span></h4>
-                       <p>Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit eligendi</p>
-                      <p><a href="#" class="btn btn-theme-colored btn-flat mt-10 btn-sm" role="button">Read More</a></p>
-                    </div>
-                  </div>
-                </div>
-                
               </div>
             </div>
           </div>
+          <div class="col-sm-12 col-md-5">
+            <h3 class="text-theme-colored text-uppercase mt-0">About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectet adipisicing elit. Quas, veniam nobis minima. Delectus, dolorem rerum, eos nemo dolore amet quis, eum debiti modi voluptatibus ducimus molestiae laborum itaque quam maxime dolor amit laboriosam aperiam exercitationem.Cos nemo dolore amet quis, eum debiti modi voluptatibus ducimus molestiae laborum itaque quam maxime dolor amit laboriosam aperiam exercitationem. Amit dolor sit.</p>
+            <div class="row mt-30 mb-30 ml-20">
+             <div class="col-xs-6">
+              <ul class="mt-10">
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Education</li>
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Community</li>
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Education</li>
+              </ul>
+             </div>
+             <div class="col-xs-6">
+              <ul class="mt-10">
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Education</li>
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Teamwork</li>
+                <li class="mb-10"><i class="fa fa-check-circle text-theme-colored"></i>&emsp;Creativity</li>
+              </ul>
+             </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectet adipisicing elit. Quas, veniam nobis minima. Delectus, dolorem rerum, eos nemo dolore amet quis, eum debiti modi voluptatibus ducimus molestiae laborum itaque quam maxime dolor amit laboriosam aperiam exercitationem.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </section>  
 
     <section class="divider parallax layer-overlay overlay-deep" data-bg-img="{{ Theme::asset('images/img-breadcrumb-5.jpg') }}">
       <div class="container">
@@ -104,5 +78,8 @@
         </div>
       </div>
     </section>
+
+  
+  <!-- end main-content -->
 @stop
 
