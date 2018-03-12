@@ -1,7 +1,12 @@
 /node_modules
 /public/hot
 /public/storage
-/public/assets
+/public/assets/themes/default/ajax-load
+/public/assets/themes/default/fonts
+/public/assets/themes/default/includes
+/public/assets/themes/default/js
+/public/assets/themes/default/less
+/public/assets/themes/default/video
 /storage/*.key
 /vendor
 /.idea
