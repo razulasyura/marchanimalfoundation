@@ -10,7 +10,7 @@
 <meta name="author" content="Muhammad Zulfikar razulasyura@github.com" />
 
 <!-- Page Title -->
-<title>March Animal Foundation - Share Our Love</title>
+<title>March Animal Foundation - Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan</title>
 
 <!-- Favicon and Touch Icons -->
 {{-- <link href="{{ Theme::asset('images/favicon.png') }}" rel="shortcut icon" type="image/png">
