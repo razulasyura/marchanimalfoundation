@@ -29,11 +29,12 @@
             <!-- Blog Masonry -->
             <div id="grid" class="gallery-isotope grid-2 masonry gutter-30 clearfix">
               <!-- Blog Item Start -->
+              @foreach($blog as $row)
               <div class="gallery-item">
                 <article class="post clearfix mb-30 bg-lighter">
                   <div class="entry-header">
                     <div class="post-thumb thumb"> 
-                      <img src="{{ Theme::asset('images/article/img_blog_1.jpg') }}" alt="" class="img-responsive img-fullwidth"> 
+                      <img src="{{ Theme::asset('images/article/'.$row->file) }}" alt="" class="img-responsive img-fullwidth"> 
                     </div>
                   </div>
                   <div class="entry-content border-1px p-20 pr-10">
@@ -46,121 +47,23 @@
                       </div>  --}}
                       <div class="media-body pl-15">
                         <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">KERACUNAN PARACETAMOL (INTOKSIKASI PARACETAMOL) PADA KUCING</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>
+                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">{{ $row->name }}</a></h4>
+                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>{{ $row->author }}</b></span>
                          {{--   <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
                           <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>    --}}                     
                         </div>
                       </div>
                     </div>
-                    <p class="mt-10">Pernahkan kucing anda mengalami demam dan anda ingin menurunkan panasnya dengan obat manusia seperti paracetamol atau acetaminophen? Setelah pemberian obat tersebut, kucing menjadi muntah dan wajah bengkak. Tahukah anda jika paracetamol berbahaya bagi kucing? Kali ini, saya akan membahas keracunan acetaminophen atau yang sering dikenal dengan paracetamol pada kucing untuk para penyayang hewan semua.</p>
+                    <p class="mt-10">
+                      {{ $row->description_name }}
+                    </p>
                     <a href="#" class="btn-read-more">Read more</a>
                     <div class="clearfix"></div>
                   </div>
                 </article>
               </div>
+              @endforeach
               <!-- Blog Item End -->
-
-               <!-- Blog Item Start -->
-              <div class="gallery-item">
-                <article class="post clearfix mb-30 bg-lighter">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> 
-                      <img src="{{ Theme::asset('images/article/img_blog_2.jpg') }}" alt="" class="img-responsive img-fullwidth"> 
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20 pr-10">
-                    <div class="entry-meta media mt-0 no-bg no-border">
-                     <div class="media-body pl-15">
-                        <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">Infeksi Calici Virus Pada Kucing</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>          
-                        </div>
-                      </div>
-                    </div>
-                    <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
-                    <a href="#" class="btn-read-more">Read more</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-              <!-- Blog Item End -->
-
-               <!-- Blog Item Start -->
-              <div class="gallery-item">
-                <article class="post clearfix mb-30 bg-lighter">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> 
-                      <img src="{{ Theme::asset('images/article/img_blog_3.jpg') }}" alt="" class="img-responsive img-fullwidth"> 
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20 pr-10">
-                    <div class="entry-meta media mt-0 no-bg no-border">
-                     <div class="media-body pl-15">
-                        <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">Infeksi Panleukopenia Virus</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>          
-                        </div>
-                      </div>
-                    </div>
-                    <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
-                    <a href="#" class="btn-read-more">Read more</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-              <!-- Blog Item End -->
-
-               <!-- Blog Item Start -->
-              <div class="gallery-item">
-                <article class="post clearfix mb-30 bg-lighter">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> 
-                      <img src="{{ Theme::asset('images/article/img_blog_4.jpg') }}" alt="" class="img-responsive img-fullwidth"> 
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20 pr-10">
-                    <div class="entry-meta media mt-0 no-bg no-border">
-                     <div class="media-body pl-15">
-                        <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">Penyakit Kulit Scabiosis Pada Anjing dan Kucing</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>          
-                        </div>
-                      </div>
-                    </div>
-                    <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
-                    <a href="#" class="btn-read-more">Read more</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-              <!-- Blog Item End -->
-
-              <!-- Blog Item Start -->
-              <div class="gallery-item">
-                <article class="post clearfix mb-30 bg-lighter">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> 
-                      <img src="{{ Theme::asset('images/article/img_blog_5.jpg') }}" alt="" class="img-responsive img-fullwidth"> 
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20 pr-10">
-                    <div class="entry-meta media mt-0 no-bg no-border">
-                     <div class="media-body pl-15">
-                        <div class="event-content pull-left flip">
-                          <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">Penyakit Parvo Virus Pada Anjing</a></h4>
-                          <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b></span>          
-                        </div>
-                      </div>
-                    </div>
-                    <p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis deleniti, sint assumenda. Pariatur iste veritatis excepturi, ipsa optio nobis.</p>
-                    <a href="#" class="btn-read-more">Read more</a>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-              <!-- Blog Item End -->
-
             </div>
             <!-- Blog Masonry -->
           </div>

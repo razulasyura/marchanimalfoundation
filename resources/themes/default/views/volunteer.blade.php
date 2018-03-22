@@ -34,43 +34,12 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($volunteer as $row)
                   <tr>
-                    <td>Drh. Ani Siti</td>
-                    <td>Sumedang</td>
+                    <td>{{ $row->name }}</td>
+                    <td>{{ $row->location }}</td>
                   </tr>
-                  <tr>
-                    <td>Drh. Ahmarining W</td>
-                    <td>Sumedang</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Widia Ilhami</td>
-                    <td>Majalengka</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Arsi Kurniawan</td>
-                    <td>Majalengka</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Kresna Nurdin</td>
-                    <td>Majalengka</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Win</td>
-                    <td>Bogor</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Bernike Anggun D.</td>
-                    <td>Klaten</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Anastascia</td>
-                    <td>Klaten</td>
-                  </tr>
-                  <tr>
-                    <td>Drh. Sari</td>
-                    <td>Klaten</td>
-                  </tr>
-                 
+                  @endforeach
                 </tbody>
               </table>
             </div>

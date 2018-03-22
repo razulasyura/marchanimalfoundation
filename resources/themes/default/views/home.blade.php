@@ -10,20 +10,14 @@
           <div class="rev_slider" data-version="5.0">
             <ul>
 
-	             <!-- SLIDE 1 -->
-	            <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="http://placehold.it/1920x1280" data-rotate="0" data-saveperformance="off" data-title="Slide 1" data-description="">
+               <!-- SLIDE 1 -->
+              @foreach($slide as $row)
+            <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="http://placehold.it/1920x1280" data-rotate="0" data-saveperformance="off" data-title="{{ $row->name }}" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="{{ Theme::asset('images/slide/img_slide_1.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+              <img src="{{ Theme::asset('images/slide/'.$row->file) }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+              @endforeach
               <!-- LAYERS -->
 	            </li>
-
-	             <!-- SLIDE 2 -->
-	            <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="http://placehold.it/1920x1280" data-rotate="0" data-saveperformance="off" data-title="Slide 2" data-description="">
-              <!-- MAIN IMAGE -->
-              <img src="{{ Theme::asset('images/slide/img_slide_2.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
-              <!-- LAYERS -->
-	            </li>
-
             </ul>
           </div><!-- end .rev_slider -->
         </div>
@@ -137,6 +131,7 @@
           </div>
         </div>
         <div class="row mtli-row-clearfix">
+          @foreach($program as $row)
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="service-block">
               <div class="thumb">
@@ -151,48 +146,7 @@
               </div>
             </div>          
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="service-block">
-              <div class="thumb">
-                <img src="{{ Theme::asset('images/program/front/img-program-front-2.jpg') }}" class="img-fullwidth" alt="">
-                <div class="desc">
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, repudiandae...</p>
-                </div>
-              </div>
-              <div class="content">
-                <h4 class="mt-0 text-black">-Sterilisasi dan vaksinasi</h4>
-                  <div class="mt-10"> <a href="#" class="btn btn-theme-colored btn-sm">Read More</a> </div>
-              </div>
-            </div>          
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="service-block">
-              <div class="thumb">
-                <img src="{{ Theme::asset('images/program/front/img-program-front-3.jpg') }}" class="img-fullwidth" alt="">
-                <div class="desc">
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, repudiandae...</p>
-                </div>
-              </div>
-              <div class="content">
-                <h4 class="mt-0 text-black">Layanan Medis Shelter</h4>
-                  <div class="mt-10"> <a href="#" class="btn btn-theme-colored btn-sm">Read More</a> </div>
-              </div>
-            </div>          
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="service-block">
-              <div class="thumb">
-                <img src="{{ Theme::asset('images/program/front/img-program-front-4.jpg') }}" class="img-fullwidth" alt="">
-                <div class="desc">
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, repudiandae...</p>
-                </div>
-              </div>
-              <div class="content">
-                <h4 class="mt-0 text-black">Pertolongan Satwa</h4>
-                  <div class="mt-10"> <a href="#" class="btn btn-theme-colored btn-sm">Read More</a> </div>
-              </div>
-            </div>          
-          </div>
+          @endforeach
         </div>
       </div>
     </section>
@@ -211,6 +165,7 @@
         <div class="row">
           <div class="col-md-12">
               <div class="owl-carousel-3col owl-nav-top mb-sm-80" data-dots="true">
+              @foreach($event as $row)
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
                   <div class="entry-header">
@@ -237,62 +192,8 @@
                     <div class="clearfix"></div>
                   </div>
                 </article>
-              </div>
-              <div class="item">
-                <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/img-event-front-2.jpg') }}" alt="" class="img-responsive img-fullwidth"> </div>
-                    <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                    <div class="display-table">
-                      <div class="display-table-cell">
-                        {{--  <ul>
-                          <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                          <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                        </ul>  --}}
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20">
-                    <h5 class="entry-title mt-0 pt-0"><a href="#">Bakti Sosial Majalengka</a></h5>
-                    <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                    <ul class="list-inline entry-date pull-right font-12 mt-5">
-                      {{--  <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                      <li><span class="text-theme-colored">Nov 13, 2017</span></li>  --}}
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-              <div class="item">
-                <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".6s">
-                  <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/img-event-front-3.jpg') }}" alt="" class="img-responsive img-fullwidth"> </div>
-                    <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                    <div class="display-table">
-                      <div class="display-table-cell">
-                        {{--  <ul>
-                          <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                          <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                        </ul>  --}}
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="entry-content border-1px p-20">
-                    <h5 class="entry-title mt-0 pt-0"><a href="#">Bakti Sosial Klaten</a></h5>
-                    <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                    <ul class="list-inline entry-date pull-right font-12 mt-5">
-                      {{--  <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                      <li><span class="text-theme-colored">Nov 13, 2017</span></li>  --}}
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                </article>
-              </div>
-             
+              </div> 
+              @endforeach     
             </div>
           </div>
         </div>

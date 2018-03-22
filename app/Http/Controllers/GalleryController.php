@@ -15,7 +15,7 @@ class GalleryController extends Controller
     public function index()
     {
         $gallery = new Gallery();
-        $test = $gallery->get();
+        $test = $gallery->all();
         dd($test);
     }
 
