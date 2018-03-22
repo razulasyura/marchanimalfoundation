@@ -30,178 +30,41 @@
             
               <!-- Portfolio Gallery Grid -->
               <div id="grid" class="gallery-isotope grid-3 gutter clearfix">
+                @foreach($gallery as $row)
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photography">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt="project">
+                  <img class="img-fullwidth" src="{{ Theme::asset('images/gallery/'. $row->file) }}" alt="{{ $row->name }}">
                     <div class="overlay-shade"></div>
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}"><i class="fa fa-plus"></i></a>
-                          <a href="#"><i class="fa fa-link"></i></a>
+                          <a data-lightbox="image" href="{{ Theme::asset('images/gallery/original/'. $row->file) }}"><i class="fa fa-plus"></i></a>
+                          {{--  <a href="#"><i class="fa fa-link"></i></a>  --}}
                         </div>
                       </div>
                     </div>
-                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}">View more</a>
+                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/gallery/'. $row->file) }}">View more</a>
                   </div>
                 </div>
                 <!-- Portfolio Item End -->
-                
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-2.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="#"><i class="fa fa-link"></i></a>
-                          <a href="#"><i class="fa fa-heart-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}">View more</a>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item design">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-3.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="#"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}">View more</a>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-4.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-6.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a class="popup-vimeo" href="https://vimeo.com/45830194"><i class="fa fa-play"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item design">
-                  <div class="thumb">
-                    <div class="flexslider-wrapper">
-                      <div class="flexslider">
-                        <ul class="slides">
-                          <li><a href="{{ Theme::asset('images/img-gal-1.jpg') }}" title="Portfolio Gallery - Photo 1"><img src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt=""></a></li>
-                          <li><a href="{{ Theme::asset('images/img-gal-1.jpg') }}" title="Portfolio Gallery - Photo 2"><img src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt=""></a></li>
-                          <li><a href="{{ Theme::asset('images/img-gal-1.jpg') }}" title="Portfolio Gallery - Photo 3"><img src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt=""></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="#"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}"><i class="fa fa-plus"></i></a>
-                          <a href="#"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}">View more</a>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item design">
-                  <div class="thumb">
-                    <div class="flexslider-wrapper" data-direction="vertical">
-                      <div class="flexslider">
-                        <ul class="slides">
-                          <li><a href="{{ Theme::asset('images/img-gal-4.jpg') }}" title="Portfolio Gallery - Photo 1"><img src="{{ Theme::asset('images/img-gal-4.jpg') }}" alt=""></a></li>
-                          <li><a href="{{ Theme::asset('images/img-gal-4.jpg') }}" title="Portfolio Gallery - Photo 2"><img src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt=""></a></li>
-                          <li><a href="{{ Theme::asset('images/img-gal-4.jpg') }}" title="Portfolio Gallery - Photo 3"><img src="{{ Theme::asset('images/img-gal-1.jpg') }}" alt=""></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="#"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="{{ Theme::asset('images/img-gal-5.jpg') }}" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}"><i class="fa fa-plus"></i></a>
-                          <a href="#"><i class="fa fa-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <a class="hover-link" data-lightbox="image" href="{{ Theme::asset('images/img-gal-1.jpg') }}">View more</a>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
+                @endforeach
               </div>
               <!-- End Portfolio Gallery Grid -->
 
             </div>
+          </div>
+          <div class="row">
+            <br/>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+            <nav>
+              <ul class="pagination theme-colored pull-right xs-pull-center m-0">
+                <?php echo $gallery->render(); ?>
+              </ul>
+            </nav>
+          </div>
           </div>
         </div>
       </div>

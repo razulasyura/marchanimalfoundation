@@ -13,6 +13,16 @@ use Theme;
 use Breadcrumbs;
 use SEO;
 use URL;
+
+use App\Gallery;
+use App\Volunteer;
+use App\Program;
+use App\Blog;
+use App\Organizer;
+use App\Event;
+use App\Contact;
+use App\Slide;
+
 class FrontController extends Controller
 {
 
@@ -27,9 +37,15 @@ class FrontController extends Controller
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
-        // Breadcrumb
+        // Load Data
+        $slides = New Slide;
+        $slide = $slides->all();
+        $programs = New Program;
+        $program = $programs->all()->take(4);
+        $events = New Event;
+        $event = $events->all()->take(4);
         // Render View
-        return view(strtolower($page_title), compact('page_title'));
+        return view(strtolower($page_title), compact('page_title','slide','program','event'));
     }
 
     public function blog()
@@ -41,9 +57,11 @@ class FrontController extends Controller
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
-        // Breadcrumb
+        // Load Data
+        $blogs = new Blog();
+        $blog = $blogs->all();
         // Render View
-        return view(strtolower($page_title), compact('page_title'));
+        return view(strtolower($page_title), compact('page_title','blog'));
     }
 
     public function blog_detail()
@@ -114,8 +132,11 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        // Load data
+        $organizers = New Organizer();
+        $organizer = $organizers->all();
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','organizer'));
     }
 
     public function volunteer()
@@ -129,8 +150,12 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        // Load Data
+        $volunteers = new Volunteer();
+        $volunteer = $volunteers->all();
+
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','volunteer'));
     }
 
     public function blank()
@@ -160,8 +185,11 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        // Load Data
+        $contacts = New Contact();
+        $contact = $contacts->findOrFail(1);
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','contact'));
     }
 
     public function event()
@@ -175,8 +203,11 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        // Load Data
+        $events = New Event();
+        $event = $events->all();
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
 
     public function event_detail()
@@ -206,8 +237,12 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        
+        /* Load Data */
+        $galleries = new Gallery();
+        $gallery = $galleries->paginate(9);
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','gallery'));
     }
 
 
@@ -222,8 +257,11 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
+        // Load Data
+        $programs = new Program();
+        $program = $programs->all();
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','program'));
     }
 
 

@@ -38,22 +38,21 @@
               <div class="contact-info text-center">
                 <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
                 <h4>Call Us</h4>
-                <h6 class="text-gray">Phone: +62 858 6677 8889</h6>
+              <h6 class="text-gray">Phone: +{{ $contact->phone }}</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
                 <h4>Address</h4>
-                <h6 class="text-gray">Komp. Ruko Kirana Mas No.6, Jl. Letda Nasir Raya Rt.09/03
-                  Bojong Kulur, Gunung Putri. Bogor</h6>
+                <h6 class="text-gray">{{ $contact->address }}</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
                 <h4>Email</h4>
-                <h6 class="text-gray">marchanimalfoundation@gmail.com</h6>
+                <h6 class="text-gray">{{ $contact->email }}</h6>
               </div>
             </div>
           </div>
@@ -134,31 +133,7 @@
 
           </div>
           <div class="col-md-5">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.479758321521!2d106.96720901435378!3d-6.331834395417738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69925245f94e89%3A0x48932bb824053493!2sJl.+Letda+M.Natsir%2C+Bojong+Kulur%2C+Gn.+Putri%2C+Bogor%2C+Jawa+Barat+16969!5e0!3m2!1sen!2sid!4v1520436601067" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            {{--  
-              <!-- Google Map HTML Codes -->
-            <div 
-              data-address="121 King Street, Melbourne Victoria 3000 Australia"
-              data-popupstring-id="#popupstring1"
-              class="map-canvas autoload-map"
-              data-mapstyle="style2"
-              data-height="500"
-              data-latlng="-37.817314,144.955431"
-              data-title="sample title"
-              data-zoom="12"
-              data-marker="images/map-marker.png">
-            </div>
-            <div class="map-popupstring hidden" id="popupstring1">
-              <div class="text-center">
-                <h3>ThemeMascot Office</h3>
-                <p>121 King Street, Melbourne Victoria 3000 Australia</p>
-              </div>
-            </div>
-            <!-- Google Map Javascript Codes -->
-            <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWE4mHmR9GyPsHSOVZrSCOOljk8DU9B4"></script>
-            <script src="{{ Theme::asset('js/google-map-init.js') }}"></script>  
-            --}}
-
+            {!! $contact->map !!}
           </div>
         </div>
       </div>

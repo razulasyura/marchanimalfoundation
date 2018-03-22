@@ -27,3 +27,6 @@ Route::get( '/event', ['as' => '/event', 'uses' => 'FrontController@event']);
 Route::get( '/event_detail', ['as' => '/events_detail', 'uses' => 'FrontController@event_detail']);
 Route::get( '/gallery', ['as' => '/gallery', 'uses' => 'FrontController@gallery']);
 
+
+/* Admin */
+Route::resource('galleries','GalleryController');
