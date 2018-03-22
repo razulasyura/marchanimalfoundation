@@ -59,7 +59,7 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Load Data
         $blogs = new Blog();
-        $blog = $blogs->all();
+        $blog = $blogs->paginate(4);
         // Render View
         return view(strtolower($page_title), compact('page_title','blog'));
     }
@@ -205,7 +205,7 @@ class FrontController extends Controller
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Load Data
         $events = New Event();
-        $event = $events->all();
+        $event = $events->paginate(2);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
@@ -219,10 +219,13 @@ class FrontController extends Controller
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
+        // Load Data
+        $events = New Event();
+        $event = $events->findOrFail(1);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
 
 
