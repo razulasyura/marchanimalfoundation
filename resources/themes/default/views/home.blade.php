@@ -135,13 +135,13 @@
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="service-block">
               <div class="thumb">
-                <img src="{{ Theme::asset('images/program/front/img-program-front-1.jpg') }}" class="img-fullwidth" alt="">
+                <img src="{{ Theme::asset('images/program/front/'.$row->file) }}" class="img-fullwidth" alt="">
                 <div class="desc">
-                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, repudiandae...</p>
+                <p class="text-white">{{ $row->description }}</p>
                 </div>
               </div>
               <div class="content">
-                <h4 class="mt-0 text-black">Edukasi Sekolah</h4>
+              <h4 class="mt-0 text-black">{{ $row->name }}</h4>
                   <div class="mt-10"> <a href="#" class="btn btn-theme-colored btn-sm">Read More</a> </div>
               </div>
             </div>          
@@ -169,7 +169,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/img-event-front-1.jpg') }}" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/event/front/'.$row->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-15 pr-15">
                     <div class="display-table">
                       <div class="display-table-cell">
@@ -182,8 +182,8 @@
                     </div>
                   </div>
                   <div class="entry-content border-1px p-20">
-                    <h5 class="entry-title mt-0 pt-0"><a href="#">Bakti Sosial Sumedang</a></h5>
-                    <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                  <h5 class="entry-title mt-0 pt-0"><a href="#">{{ $row->name }}</a></h5>
+                  <p class="text-left mb-20 mt-15 font-13">{{$row->description_name}}</p>
                     <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
                     <ul class="list-inline entry-date pull-right font-12 mt-5">
                       {{--  <li><a class="text-theme-colored" href="#">Admin |</a></li>

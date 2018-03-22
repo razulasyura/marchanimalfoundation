@@ -240,7 +240,7 @@ class FrontController extends Controller
         
         /* Load Data */
         $galleries = new Gallery();
-        $gallery = $galleries->all();
+        $gallery = $galleries->paginate(9);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','gallery'));
     }
