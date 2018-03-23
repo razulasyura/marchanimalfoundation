@@ -47,7 +47,7 @@
                       </div>  --}}
                       <div class="media-body pl-15">
                         <div class="event-content pull-left flip">
-                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">{{ $row->name }}</a></h4>
+                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="{{ url('blog/'.$row->id) }}">{{ $row->name }}</a></h4>
                           <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>{{ $row->author }}</b></span>
                          {{--   <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
                           <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>    --}}                     
@@ -57,7 +57,7 @@
                     <p class="mt-10">
                       {{ $row->description_name }}
                     </p>
-                    <a href="#" class="btn-read-more">Read more</a>
+                    <a href="{{ url('blog/'.$row->id) }}" class="btn-read-more">Read more</a>
                     <div class="clearfix"></div>
                   </div>
                 </article>

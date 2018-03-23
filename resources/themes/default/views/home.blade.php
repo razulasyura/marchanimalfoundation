@@ -142,7 +142,7 @@
               </div>
               <div class="content">
               <h4 class="mt-0 text-black">{{ $row->name }}</h4>
-                  <div class="mt-10"> <a href="#" class="btn btn-theme-colored btn-sm">Read More</a> </div>
+                  <div class="mt-10"> <a href="{{ url('program/'.$row->id) }}" class="btn btn-theme-colored btn-sm">Read More</a> </div>
               </div>
             </div>          
           </div>
@@ -184,7 +184,7 @@
                   <div class="entry-content border-1px p-20">
                   <h5 class="entry-title mt-0 pt-0"><a href="#">{{ $row->name }}</a></h5>
                   <p class="text-left mb-20 mt-15 font-13">{{$row->description_name}}</p>
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
+                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="{{ url('event/'.$row->id) }}">Read more</a>
                     <ul class="list-inline entry-date pull-right font-12 mt-5">
                       {{--  <li><a class="text-theme-colored" href="#">Admin |</a></li>
                       <li><span class="text-theme-colored">Nov 13, 2017</span></li>  --}}

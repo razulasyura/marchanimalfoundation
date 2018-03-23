@@ -39,7 +39,7 @@
                     </div>
                     <div class="media-body pl-15">
                       <div class="event-content pull-left flip">
-                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="#">KERACUNAN PARACETAMOL (INTOKSIKASI PARACETAMOL) PADA KUCING</a></h3>
+                      <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="#">{{ $blog->name }}</a></h3>
                         {{--  <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
                         <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>  --}}
                         <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b> (Post Graduate Certificate (Small animal surgery)</span>
@@ -47,6 +47,7 @@
                     </div>
                   </div>
                   {{--  content here  --}}
+                  {!! $blog->description !!}
                   <div class="mt-30 mb-0">
                     <h5 class="pull-left flip mt-10 mr-20 text-theme-colored">Share:</h5>
                     <ul class="styled-icons icon-circled m-0">
@@ -115,43 +116,17 @@
           <div class="col-md-3">
             <div class="sidebar sidebar-right mt-sm-30">
               <div class="widget">
-                <h5 class="widget-title line-bottom">Latest News</h5>
+                <h5 class="widget-title line-bottom">Latest Articles</h5>
                 <div class="latest-posts">
+                  @foreach($list as $row)
                   <article class="post media-post clearfix pb-0 mb-10">
                     <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
                     <div class="post-right">
-                      <h5 class="post-title mt-0"><a href="#">Sustainable Construction</a></h5>
-                      <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
+                    <h5 class="post-title mt-0"><a href="{{ url('blog/'.$row->id) }}">{!! str_limit($row->name) !!}</a></h5>
+                    {{--  <p>{!! str_limit($row->description,40) !!}</p>  --}}
                     </div>
                   </article>
-                  <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                      <h5 class="post-title mt-0"><a href="#">Industrial Coatings</a></h5>
-                      <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                  </article>
-                  <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                      <h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
-                      <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                  </article>
-                  <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                      <h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
-                      <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                  </article>
-                  <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                      <h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
-                      <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                  </article>
+                  @endforeach
                 </div>
               </div>
             </div>

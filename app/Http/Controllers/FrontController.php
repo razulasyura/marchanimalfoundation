@@ -64,7 +64,7 @@ class FrontController extends Controller
         return view(strtolower($page_title), compact('page_title','blog'));
     }
 
-    public function blog_detail()
+    public function blog_detail($id)
     {
         // Load Theme
         Theme::init($this->theme);
@@ -73,9 +73,12 @@ class FrontController extends Controller
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
-        // Breadcrumb
+        // Load Data
+        $blogs = New Blog();
+        $blog = $blogs->findOrFail($id);
+        $list = $blogs->all()->take(5);
         // Render View
-        return view(strtolower($page_title), compact('page_title'));
+        return view(strtolower($page_title), compact('page_title','blog','list'));
     }
 
     public function adoption()
@@ -210,7 +213,7 @@ class FrontController extends Controller
         return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
 
-    public function event_detail()
+    public function event_detail($id)
     {
         // Load Theme
         Theme::init($this->theme);
@@ -221,7 +224,7 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Load Data
         $events = New Event();
-        $event = $events->findOrFail(1);
+        $event = $events->findOrFail($id);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Render View

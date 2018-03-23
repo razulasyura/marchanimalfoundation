@@ -37,7 +37,7 @@
                   <div class="event-details p-15 mt-20">
                   <h4 class="mt-0 text-uppercase font-weight-500">{{ $row->name }}</h4>
                     <p>{{ $row->description_name }}</p>
-                    <a href="#" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                    <a href="{{ url('event/'.$row->id) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 <div class="col-sm-4">
