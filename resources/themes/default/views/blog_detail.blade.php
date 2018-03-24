@@ -27,7 +27,7 @@
             <div class="blog-posts single-post">
               <article class="post clearfix mb-0">
                 <div class="entry-header">
-                  <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/img-blog-detail.jpg') }}" alt="" class="img-responsive img-fullwidth"> </div>
+                  <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/article/'.$blog->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
                 </div>
                 <div class="entry-content">
                   <div class="entry-meta media no-bg no-border mt-15 pb-20">
@@ -120,7 +120,7 @@
                 <div class="latest-posts">
                   @foreach($list as $row)
                   <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
+                  <a class="post-thumb" href="#"><img src="{{ Theme::asset('images/article/'.$row->file) }}" width="75px" height="75px" alt=""></a>
                     <div class="post-right">
                     <h5 class="post-title mt-0"><a href="{{ url('blog/'.$row->id) }}">{!! str_limit($row->name) !!}</a></h5>
                     {{--  <p>{!! str_limit($row->description,40) !!}</p>  --}}
