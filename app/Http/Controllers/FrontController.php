@@ -59,7 +59,7 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Load Data
         $blogs = new Blog();
-        $blog = $blogs->paginate(4);
+        $blog = $blogs->orderBy('id','desc')->paginate(4);
         // Render View
         return view(strtolower($page_title), compact('page_title','blog'));
     }
@@ -208,7 +208,7 @@ class FrontController extends Controller
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Load Data
         $events = New Event();
-        $event = $events->paginate(2);
+        $event = $events->orderBy('id', 'desc')->paginate(2);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
@@ -225,10 +225,12 @@ class FrontController extends Controller
         // Load Data
         $events = New Event();
         $event = $events->findOrFail($id);
+        $galleries = new Gallery();
+        $gallery = $galleries->where('album_id',$event->album_id)->get();
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Render View
-        return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','event','gallery'));
     }
 
 
@@ -266,6 +268,24 @@ class FrontController extends Controller
         // Load Data
         $programs = new Program();
         $program = $programs->all();
+        // Render View
+        return view(strtolower($page_title), compact('page_title','breadcrumbs','program'));
+    }
+
+    public function program_detail($id)
+    {
+        // Load Theme
+        Theme::init($this->theme);
+        // Page Title & Description
+        $page_title = "program_detail";
+        $page_description = "This is".$page_title." page";
+        // SEO
+        $this->_seo($page_title,$page_description);
+        // Load Data
+        $programs = New Program();
+        $program = $programs->findOrFail($id);
+        // Breadcrumb
+        $breadcrumbs = $this->_breadcrumbs($page_title);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','program'));
     }

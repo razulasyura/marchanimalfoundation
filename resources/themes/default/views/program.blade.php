@@ -13,7 +13,7 @@
               <h2 class="title">Program</h2>
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
+                <li><a href="#">Name</a></li>
                 <li class="active text-theme-colored">Page Title</li>
               </ol>
             </div>
@@ -39,13 +39,13 @@
                     
                     <div class="media-body">
                       <div class="event-content pull-left flip">
-                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="#">{{ $row->name }}</a></h4>
+                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="{{ url('program/'.$row->id) }}">{{ $row->name }}</a></h4>
                                             
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">{{ $row->description }}</p>
-                  <a href="#" class="btn-read-more">Read more</a>
+                  <p class="mt-10">{{ $row->description_name }}</p>
+                  <a href="{{ url('program/'.$row->id) }}" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
               </article>

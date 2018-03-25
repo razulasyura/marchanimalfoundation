@@ -137,7 +137,7 @@
               <div class="thumb">
                 <img src="{{ Theme::asset('images/program/front/'.$row->file) }}" class="img-fullwidth" alt="">
                 <div class="desc">
-                <p class="text-white">{{ $row->description }}</p>
+                <p class="text-white">{{ $row->description_name }}</p>
                 </div>
               </div>
               <div class="content">
@@ -182,7 +182,7 @@
                     </div>
                   </div>
                   <div class="entry-content border-1px p-20">
-                  <h5 class="entry-title mt-0 pt-0"><a href="#">{{ $row->name }}</a></h5>
+                  <h5 class="entry-title mt-0 pt-0"><a href="{{ url('event/'.$row->id) }}">{{ $row->name }}</a></h5>
                   <p class="text-left mb-20 mt-15 font-13">{{$row->description_name}}</p>
                     <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="{{ url('event/'.$row->id) }}">Read more</a>
                     <ul class="list-inline entry-date pull-right font-12 mt-5">

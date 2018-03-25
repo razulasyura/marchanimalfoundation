@@ -19,9 +19,10 @@ Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@b
 Route::get( '/organizer', ['as' => 'organizer', 'uses' => 'FrontController@organizer']);
 Route::get( '/volunteer', ['as' => 'volunteer', 'uses' => 'FrontController@volunteer']);
 Route::get( '/about', ['as' => 'about', 'uses' => 'FrontController@about']);
-Route::get( '/adoption', ['as' => 'adoption', 'uses' => 'FrontController@adoption']);
-Route::get( '/adoption_detail', ['as' => 'adoption_detail', 'uses' => 'FrontController@adoption_detail']);
+/* Route::get( '/adoption', ['as' => 'adoption', 'uses' => 'FrontController@adoption']);
+Route::get( '/adoption_detail', ['as' => 'adoption_detail', 'uses' => 'FrontController@adoption_detail']); */
 Route::get( '/program', ['as' => 'program', 'uses' => 'FrontController@program']);
+Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']);
 Route::get( '/blank', ['as' => 'blank', 'uses' => 'FrontController@about']);
 Route::get( '/contact', ['as' => 'contact', 'uses' => 'FrontController@contact']);
 Route::get( '/event', ['as' => 'event', 'uses' => 'FrontController@event']);
