@@ -31,12 +31,12 @@
                 </div>
                 <div class="entry-content">
                   <div class="entry-meta media no-bg no-border mt-15 pb-20">
-                    <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                    {{--  <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
                       <ul>
                         <li class="font-16 text-white font-weight-600">28</li>
                         <li class="font-12 text-white text-uppercase">Feb</li>
                       </ul>
-                    </div>
+                    </div>  --}}
                     <div class="media-body pl-15">
                       <div class="event-content pull-left flip">
                       <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="#">{{ $blog->name }}</a></h3>
