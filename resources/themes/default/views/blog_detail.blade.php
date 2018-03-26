@@ -42,7 +42,7 @@
                       <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="#">{{ $blog->name }}</a></h3>
                         {{--  <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-commenting-o mr-5 text-theme-colored"></i> 214 Comments</span>                       
                         <span class="mb-10 text-gray-darkgray mr-10 font-13"><i class="fa fa-heart-o mr-5 text-theme-colored"></i> 895 Likes</span>  --}}
-                        <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b> (Post Graduate Certificate (Small animal surgery)</span>
+                        {{--  <span class="mb-10 text-gray-darkgray mr-10 font-13">oleh : <b>drh Wywy Goulda March</b> (Post Graduate Certificate (Small animal surgery)</span>  --}}
                       </div>
                     </div>
                   </div>

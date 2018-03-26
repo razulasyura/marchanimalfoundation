@@ -39,7 +39,8 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Load Data
         $slides = New Slide;
-        $slide = $slides->all();
+        $slide = $slides->all()->toArray();
+        // dd($slide[0]['id']);
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;
