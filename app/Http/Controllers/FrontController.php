@@ -40,7 +40,7 @@ class FrontController extends Controller
         // Load Data
         $slides = New Slide;
         $slide = $slides->all()->toArray();
-        // dd($slide[0]['id']);
+        // dd(  );
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;

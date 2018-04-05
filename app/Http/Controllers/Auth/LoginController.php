@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Theme;
+use Alert;
 
 class LoginController extends Controller
 {
@@ -19,13 +21,14 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    var $theme = 'admin';
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -35,5 +38,22 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /* override login */
+    public function showLoginForm()
+    {
+        Theme::init($this->theme);
+        Alert::success('Good job!');
+        $page_title = "general.text.welcome";
+        $page_description = "This is the welcome page";  
+        return view('login', compact('page_title'));
+    }
+
+    /* override logout */
+    public function logout()
+    {
+        $this->guard()->logout();
+        return redirect('/login');
     }
 }

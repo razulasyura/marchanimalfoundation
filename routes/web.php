@@ -33,3 +33,9 @@ Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']
 
 /* Admin */
 Route::resource('galleries','GalleryController');
+Route::resource('siswa','SiswaController');
+Route::get('admin','AdminController@admin');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

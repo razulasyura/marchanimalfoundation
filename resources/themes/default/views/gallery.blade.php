@@ -61,7 +61,7 @@
             <div class="col-sm-12">
             <nav>
               <ul class="pagination theme-colored pull-right xs-pull-center m-0">
-                <?php echo $gallery->render(); ?>
+                {{ $gallery->render(); }}
               </ul>
             </nav>
           </div>

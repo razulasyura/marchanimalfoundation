@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="{{ app()->getLocale() }}">
 <head>
 
 <!-- Meta Tags -->
@@ -8,6 +8,7 @@
 <meta name="description" content="March Animal Foundation" />
 <meta name="keywords" content="Charity,Nonprofit,Crowdfunding,Donation & Fundraising" />
 <meta name="author" content="Muhammad Zulfikar razulasyura@github.com" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Page Title -->
 <title>March Animal Foundation - Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan</title>

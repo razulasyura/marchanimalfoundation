@@ -8,7 +8,12 @@ use Alert;
 
 class AdminController extends Controller
 {
-	var $theme = 'admin';
+    var $theme = 'admin';
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function admin()
     {
