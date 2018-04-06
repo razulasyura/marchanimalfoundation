@@ -47,7 +47,7 @@
                 <strong>{{ $errors->first('email') }}</strong>
             </span>
         @endif
-        <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+        <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">

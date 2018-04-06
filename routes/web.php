@@ -28,11 +28,12 @@ Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']
 
 /* Admin */
 Route::resource('galleries','GalleryController');
-Route::resource('siswa','SiswaController');
 
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
-    Route::get('admin','AdminController@admin');
+    Route::get('admin','Admin\AdminController@admin')->middleware('auth');
+    Route::resource('default','Admin\DefaultController')->only(['index','create'])->middleware('auth');
+    Route::resource('user','Admin\UserController')->middleware('auth');
 });
 
 

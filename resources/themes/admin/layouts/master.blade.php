@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="{{ Theme::asset('bower_components/admin-lte/dist/css/skins/skin-blue.min.css')}}">
+  @yield('css')  {{-- adding css --}}
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -409,6 +410,9 @@ desired effect
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Include this after the sweet alert js file -->
 @include('sweet::alert')
+
+{{-- Adding JS --}}
+@yield('js')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
