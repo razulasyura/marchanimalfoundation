@@ -33,14 +33,14 @@ class FrontController extends Controller
         // Load Theme
         Theme::init($this->theme);
         // Page Title & Description
-        $page_title = "Home";
+        $page_title = "Index";
         $page_description = "This is".$page_title." page";
         // SEO
         $this->_seo($page_title,$page_description);
         // Load Data
         $slides = New Slide;
         $slide = $slides->all()->toArray();
-        // dd(  );
+        // dd($slides);
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;
