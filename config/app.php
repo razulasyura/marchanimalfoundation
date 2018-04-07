@@ -179,7 +179,6 @@ return [
         // Add on
         YAAP\Theme\ThemeServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
-
     ],
 
     /*
@@ -230,7 +229,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Theme' => YAAP\Theme\Facades\Theme::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
-
     ],
 
 ];

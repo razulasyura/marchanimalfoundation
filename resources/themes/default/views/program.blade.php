@@ -39,13 +39,13 @@
                     
                     <div class="media-body">
                       <div class="event-content pull-left flip">
-                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="{{ url('program/'.$row->id) }}">{{ $row->name }}</a></h4>
+                        <h4 class="entry-title text-white text-uppercase m-0 mt-5"><a href="{{ url(Setting::get('language').'/program/'.$row->id) }}">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif</a></h4>
                                             
                       </div>
                     </div>
                   </div>
-                  <p class="mt-10">{{ $row->description_name }}</p>
-                  <a href="{{ url('program/'.$row->id) }}" class="btn-read-more">Read more</a>
+                  <p class="mt-10">@if (Request::segment(1)=='en') {{ $row->description_name_en }} @else {{ $row->description_name }} @endif</p>
+                  <a href="{{ url(Setting::get('language').'/program/'.$row->id) }}" class="btn-read-more">Read more</a>
                   <div class="clearfix"></div>
                 </div>
               </article>

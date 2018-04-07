@@ -14,7 +14,7 @@
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pages</a></li>
-              <li class="active text-theme-colored">{{ $program->name}}</li>
+              <li class="active text-theme-colored">@if (Request::segment(1)=='en') {{ $program->name_en }} @else {{ $program->name }} @endif</li>
               </ol>
             </div>
           </div>
@@ -34,8 +34,8 @@
             {{--  </div>  --}}
           </div>
           <div class="col-sm-12 col-md-5">
-          <h3 class="text-theme-colored text-uppercase mt-0">{{$program->name}}</h3>
-          {!!$program->description!!}
+          <h3 class="text-theme-colored text-uppercase mt-0">@if (Request::segment(1)=='en') {{ $program->name_en }} @else {{ $program->name }} @endif</h3>
+          @if (Request::segment(1)=='en') {!! $program->description_en !!} @else {!! $program->description !!} @endif
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
           <div class="section-title text-center">
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
-              <h2 class="title text-black-666"> Artikel<span class="text-theme-colored"> {{ $program->name}}</span></h2>
+              <h2 class="title text-black-666"> Artikel<span class="text-theme-colored"> @if (Request::segment(1)=='en') {{ $program->name_en }} @else {{ $program->name }} @endif</span></h2>
               
             </div>
           </div>
@@ -64,9 +64,9 @@
                 </div>
                 <div class="col-sm-8 pl-0 pl-sm-15">
                   <div class="event-details p-15 mt-20">
-                  <h4 class="mt-0 text-uppercase font-weight-500">{{ $row->name }}</h4>
-                    <p>{{ $row->description_name }}</p>
-                    <a href="{{ url('blog/'.$row->id) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                  <h4 class="mt-0 text-uppercase font-weight-500">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif</h4>
+                    <p>@if (Request::segment(1)=='en') {{ $row->description_name_en }} @else {{ $row->description_name }} @endif</p>
+                    <a href="{{ url(Setting::get('language').'/blog/'.$row->id) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 

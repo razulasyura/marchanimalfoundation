@@ -29,7 +29,7 @@
               <div class="team-member maxwidth400">
                 <div class="thumb"><img alt="" src="{{ Theme::asset('images/organizer/'.$row->file) }}" class="img-fullwidth"></div>
                 <div class="info">
-                  <h4 class="mb-0">{{ $row->name }} <small>- {{ $row->title }}</small></h4>
+                  <h4 class="mb-0">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif <small>- @if (Request::segment(1)=='en') {{ $row->title_en }} @else {{ $row->title }} @endif</small></h4>
                   {{--  <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Consectetur adipisicing elit. Tempore provident accusamus est asperiores illum eius is.</p>  --}}
                   <ul class="styled-icons icon-theme-colored icon-circled icon-dark icon-sm mt-10 mb-0">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>

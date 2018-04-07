@@ -12,13 +12,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-          @if(isset($data))
-            <form role="form" method="{{ $method }}" action="{{action('Admin\UserController@update', $data->id)}}">
-            <input name="_method" type="hidden" value="PATCH">
-          @else
-            <form role="form" method="{{ $method }}" action="{{ action($action) }}">
-          @endif
+          <form role="form" method="{{ $method }}" action="{{ url($action) }}">
           {{csrf_field()}}
+          @if(isset($data))
+          <input name="_method" type="hidden" value="PATCH">
+          @endif
           <div class="box-body">
           @if ($errors->any())
           <div class="alert alert-danger">

@@ -15,9 +15,9 @@
           <div class="col-md-8">
             <div class="widget no-border m-0">
               <ul class="list-inline pull-right flip sm-pull-none sm-text-center mt-5">
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">+62 859 6677 8889</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">{{ Setting::get('phone')}}</a> </li>
                 <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Fri 9:00 to 17:00 </li>
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">marchanimalfoundation@gmail.com</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">{{ Setting::get('email')}}</a> </li>
               </ul>
             </div>
           </div>
@@ -30,6 +30,8 @@
                 </li>
                 <li class="mt-sm-10 mb-sm-10">
                   <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10" href="http://bit.ly/MAFregistrasi" target="_blank">Join Us</a>
+                  <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10" href="{{ url('id') }}">ID</a>
+                  <a class="btn btn-default btn-flat btn-xs bg-light p-5 font-11 pl-10 pr-10" href="{{ url('en') }}">EN</a>
                 </li>
               </ul>
             </div>
@@ -49,14 +51,14 @@
             <div class="widget no-border m-0">
               <div class="mt-10 mb-10 text-right flip sm-text-center">
                 <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-envelope text-theme-colored font-18"></i> Mail Us Today</div>
-                <a class="font-12 text-gray" href="#"> marchanimalfoundation@gmail.com</a>
+                <a class="font-12 text-gray" href="#">{{ Setting::get('email')}}</a>
               </div>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-2">
             <div class="widget no-border m-0">
               <div class="mt-10 mb-10 text-right flip sm-text-center">
-                <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-phone-square text-theme-colored font-18"></i> +62 859 6677 8889</div>
+                <div class="font-15 text-black-333 mb-5 font-weight-600"><i class="fa fa-phone-square text-theme-colored font-18"></i> {{ Setting::get('phone')}}</div>
                 <a class="font-12 text-gray" href="#">Call us for more details!</a>
               </div>
             </div>
@@ -77,21 +79,21 @@
         <div class="container">
           <nav id="menuzord" class="menuzord default bg-light">
             <ul class="menuzord-menu">
-              <li><a href="{{ url('home') }}">Home</a></li>
+              <li><a href="{{ url(Setting::get('language').'/home') }}">Home</a></li>
               <li><a href="#">About</a>
                 <ul class="dropdown">
-                  <li><a href="{{ url('about') }}">About</a></li>
-                  <li><a href="{{ url('organizer') }}">Organizer</a></li>
-                  {{-- <li><a href="{{ url('volunteer') }}">Volunteer</a></li> --}}
+                  <li><a href="{{ url(Setting::get('language').'/about') }}">About</a></li>
+                  <li><a href="{{ url(Setting::get('language').'/organizer') }}">Organizer</a></li>
+                  {{-- <li><a href="{{ url(Setting::get('language').'/volunteer') }}">Volunteer</a></li> --}}
                 </ul>
               </li>
-              <li><a href="{{ url('program') }}">Program</a></li>
-              <li><a href="{{ url('event') }}">Event</a></li>
-              <li><a href="{{ url('blog') }}">Article</a></li>
-              {{--  <li><a href="{{ url('vetenarian') }}">Vetenarian</a></li>  --}}
-              <li><a href="{{ url('volunteer') }}">Volunteer</a></li>              
-              <li><a href="{{ url('gallery') }}">Gallery</a></li>                        
-              <li><a href="{{ url('contact') }}">Contact</a></li>
+              <li><a href="{{ url(Setting::get('language').'/program') }}">Program</a></li>
+              <li><a href="{{ url(Setting::get('language').'/event') }}">Event</a></li>
+              <li><a href="{{ url(Setting::get('language').'/blog') }}">Article</a></li>
+              {{--  <li><a href="{{ url(Setting::get('language').'/vetenarian') }}">Vetenarian</a></li>  --}}
+              <li><a href="{{ url(Setting::get('language').'/volunteer') }}">Volunteer</a></li>              
+              <li><a href="{{ url(Setting::get('language').'/gallery') }}">Gallery</a></li>                        
+              <li><a href="{{ url(Setting::get('language').'/contact') }}">Contact</a></li>
             </ul>
             <ul class="list-inline pull-right flip hidden-sm hidden-xs">
               <li>

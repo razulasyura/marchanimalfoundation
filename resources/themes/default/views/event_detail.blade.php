@@ -13,7 +13,7 @@
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="#">Home</a></li>
               <li><a href="#">Event</a></li>
-                <li class="active text-theme-colored">{{ $event->name }}</li>
+                <li class="active text-theme-colored">@if (Request::segment(1)=='en') {{ $event->name_en }} @else {{ $event->name }} @endif</li>
               </ol>
             </div>
           </div>
@@ -28,7 +28,7 @@
             <ul>
               <li>
                 <h5>Topics:</h5>
-                <p>{{ $event->name }}</p>
+                <p>@if (Request::segment(1)=='en') {{ $event->name_en }} @else {{ $event->name }} @endif</p>
               </li>
               <li>
                 <h5>Host:</h5>
@@ -40,7 +40,7 @@
               </li>
               <li>
                 <h5>Date:</h5>
-                <p>{{ $event->time }}</p>
+                <p>@if (Request::segment(1)=='en') {{ $event->time_en }} @else {{ $event->time }} @endif</p>
               </li>
               {{--  <li>
                 <h5>End Date:</h5>
@@ -64,7 +64,7 @@
         <div class="row mt-60">
           <div class="col-md-12">
             <h4 class="mt-0">Event Description</h4>
-            <p>{!! $event->description !!}</p>
+            <p>@if (Request::segment(1)=='en') {!! $event->description_en !!} @else {!! $event->description !!} @endif</p>
           </div>
         <div class="col-md-12">
           <h4 class="mt-0">Documentation</h4>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Theme;
 use Alert;
+use Setting;
 
 class DefaultController extends Controller
 {

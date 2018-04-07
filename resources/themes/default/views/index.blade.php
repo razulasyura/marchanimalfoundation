@@ -180,7 +180,7 @@
 	                  data-splitin="none" 
 	                  data-splitout="none" 
 	                  data-responsive_offset="on"
-	                  style="z-index: 7; white-space: nowrap; font-weight:700; border-radius: 30px;">{{ $slide[0]['name'] }} 
+	                  style="z-index: 7; white-space: nowrap; font-weight:700; border-radius: 30px;">@if (Request::segment(1)=='en') {{ $slide[0]['name_en'] }} @else {{ $slide[0]['name'] }} @endif
 	                </div>
 
 	                <!-- LAYER NR. 3 -->
@@ -205,7 +205,7 @@
 	                  data-splitin="none" 
 	                  data-splitout="none" 
 	                  data-responsive_offset="on"
-	                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{!! $slide[0]['description'] !!}
+	                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">@if (Request::segment(1)=='en') {!! $slide[0]['description_en'] !!} @else {!! $slide[0]['description'] !!} @endif
 	                </div>
 
 	                <!-- LAYER NR. 4 -->
@@ -285,7 +285,7 @@
 	                  data-splitin="none" 
 	                  data-splitout="none" 
 	                  data-responsive_offset="on"
-	                  style="z-index: 7; white-space: nowrap; font-weight:600; border-radius: 30px;">{{ $slide[1]['name'] }} 
+	                  style="z-index: 7; white-space: nowrap; font-weight:600; border-radius: 30px;">@if (Request::segment(1)=='en') {{ $slide[1]['name_en'] }} @else {{ $slide[1]['name'] }} @endif 
 	                </div>
 
 	                <!-- LAYER NR. 3 -->
@@ -310,7 +310,7 @@
 	                  data-splitin="none" 
 	                  data-splitout="none" 
 	                  data-responsive_offset="on"
-	                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{!! $slide[1]['description'] !!}
+	                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">@if (Request::segment(1)=='en') {!! $slide[1]['description_en'] !!} @else {!! $slide[1]['description'] !!} @endif
 	                </div>
 
 	                <!-- LAYER NR. 4 -->
@@ -365,7 +365,7 @@
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
-                  style="z-index: 7; white-space: nowrap; font-weight:600;">{{ $slide[2]['name'] }}
+                  style="z-index: 7; white-space: nowrap; font-weight:600;">@if (Request::segment(1)=='en') {{ $slide[2]['name_en'] }} @else {{ $slide[2]['name'] }} @endif
                 </div>
 
                 <!-- LAYER NR. 2 -->
@@ -415,7 +415,7 @@
                   data-splitin="none" 
                   data-splitout="none" 
                   data-responsive_offset="on"
-                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">{!! $slide[2]['description'] !!}
+                  style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">@if (Request::segment(1)=='en') {!! $slide[2]['description_en'] !!} @else {!! $slide[2]['description'] !!} @endif
                 </div>
 
                 <!-- LAYER NR. 4 -->
@@ -561,12 +561,12 @@
               <div class="thumb">
                 <img src="{{ Theme::asset('images/program/front/'.$row->file) }}" class="img-fullwidth" alt="">
                 <div class="desc">
-                <p class="text-white">{{ $row->description_name }}</p>
+                <p class="text-white">@if (Request::segment(1)=='en') {!! $row->description_name_en !!} @else {!! $row->description_name !!} @endif</p>
                 </div>
               </div>
               <div class="content">
-              <h4 class="mt-0 text-black">{{ $row->name }}</h4>
-                  <div class="mt-10"> <a href="{{ url('program/'.$row->id) }}" class="btn btn-theme-colored btn-sm">Read More</a> </div>
+              <h4 class="mt-0 text-black">@if (Request::segment(1)=='en') {!! $row->name_en !!} @else {!! $row->name !!} @endif</h4>
+                  <div class="mt-10"> <a href="{{ url(Setting::get('language').'/program/'.$row->id) }}" class="btn btn-theme-colored btn-sm">Read More</a> </div>
               </div>
             </div>          
           </div>
@@ -606,9 +606,9 @@
                     </div>
                   </div>
                   <div class="entry-content border-1px p-20">
-                  <h5 class="entry-title mt-0 pt-0"><a href="{{ url('event/'.$row->id) }}">{{ $row->name }}</a></h5>
-                  <p class="text-left mb-20 mt-15 font-13">{{$row->description_name}}</p>
-                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="{{ url('event/'.$row->id) }}">Read more</a>
+                  <h5 class="entry-title mt-0 pt-0"><a href="{{ url(Setting::get('language').'/event/'.$row->id) }}">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif</a></h5>
+                  <p class="text-left mb-20 mt-15 font-13">@if (Request::segment(1)=='en') {{ $row->description_name_en }} @else {{ $row->description_name }} @endif</p>
+                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="{{ url(Setting::get('language').'/event/'.$row->id) }}">Read more</a>
                     <ul class="list-inline entry-date pull-right font-12 mt-5">
                       {{--  <li><a class="text-theme-colored" href="#">Admin |</a></li>
                       <li><span class="text-theme-colored">Nov 13, 2017</span></li>  --}}

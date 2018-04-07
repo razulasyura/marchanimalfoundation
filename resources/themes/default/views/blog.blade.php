@@ -35,9 +35,9 @@
                 </div>
                 <div class="col-sm-8 pl-0 pl-sm-15">
                   <div class="event-details p-15 mt-20">
-                  <h4 class="mt-0 text-uppercase font-weight-500">{{ $row->name }}</h4>
-                    <p>{{ $row->description_name }}</p>
-                    <a href="{{ url('blog/'.$row->id) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
+                  <h4 class="mt-0 text-uppercase font-weight-500">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif</h4>
+                    <p>@if (Request::segment(1)=='en') {{ $row->description_name_en }} @else {{ $row->description_name }} @endif</p>
+                    <a href="{{ url(Setting::get('language').'/blog/'.$row->id) }}" class="btn btn-flat btn-dark btn-theme-colored btn-sm mt-10">Details <i class="fa fa-angle-double-right"></i></a>
                   </div>
                 </div>
                 

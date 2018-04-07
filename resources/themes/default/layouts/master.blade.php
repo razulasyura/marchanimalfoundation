@@ -5,13 +5,13 @@
 <!-- Meta Tags -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<meta name="description" content="March Animal Foundation" />
+<meta name="description" content="{{ Setting::get('application')}}" />
 <meta name="keywords" content="Charity,Nonprofit,Crowdfunding,Donation & Fundraising" />
 <meta name="author" content="Muhammad Zulfikar razulasyura@github.com" />
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Page Title -->
-<title>March Animal Foundation - Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan</title>
+<title>{{ Setting::get('application').' - '.Setting::get('motto') }}</title>
 
 <!-- Favicon and Touch Icons -->
 {{-- <link href="{{ Theme::asset('images/favicon.png') }}" rel="shortcut icon" type="image/png">

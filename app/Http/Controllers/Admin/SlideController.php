@@ -9,7 +9,7 @@ use App\User;
 use Auth;
 use Alert;
 
-class UserController extends Controller
+class SlideController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,6 @@ class UserController extends Controller
     var $mainPage = 'admin/user';
     var $index = 'user/index';
     var $form = 'user/form';
-    var $store = 'Admin\UserController@store';
 
     public function __construct(User $user)
     {
@@ -31,6 +30,7 @@ class UserController extends Controller
 
     public function index()
     {
+        $setting = Setting::all();
         $data = $this->users::where('id', '!=', 2)->get();
         return view($this->index,compact('data'));
     }
@@ -43,7 +43,7 @@ class UserController extends Controller
     public function create()
     {
         $method = 'POST';
-        $action = $this->store;
+        $action = $this->mainPage;
         return view($this->form,compact('method','action'));
     }
 
@@ -61,7 +61,7 @@ class UserController extends Controller
             'email'=>'required|email|unique:users',
             'password'=>'required'
         ]);
-        
+
         /* retrive data */
         $this->users->name = $request->get('name');
         $this->users->email = $request->get('email');
@@ -100,7 +100,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $method = 'POST';
-        $action = 'Admin\UserController@update';
+        $action = 'admin/user/'.$id;
         $data = $this->users->findOrFail($id);
         return view($this->form,compact('data','method','action'));
     }

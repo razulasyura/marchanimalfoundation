@@ -33,7 +33,7 @@
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->email }}</td>
                     <td>
-                      <form action="{{action('Admin\UserController@destroy', $row->id)}}" method="POST">
+                      <form action="{{action('Admin\UserController@destroy', $row->id)}}" method="post">
                         {{csrf_field()}}
                         <input name="_method" type="hidden" value="DELETE">
                         <button class="btn btn-danger" type="submit">Delete</button>

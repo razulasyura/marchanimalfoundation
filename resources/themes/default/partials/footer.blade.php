@@ -4,7 +4,7 @@
         <div class="col-md-6 col-md-offset-3 text-center">
            <img src="{{ Theme::asset('images/logo-wide-white.png') }}" alt=""> 
           {{-- <p class="font-36 mt-20 mb-20">March Animal Foundation</p> --}}
-          <p class="font-20 mt-20 mb-20">Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan</p>
+          <p class="font-20 mt-20 mb-20">{{ Setting::get('motto')}}</p>
           <ul class="styled-icons flat medium list-inline mb-20">
             <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
             <li><a href="#"><i class="fa fa-twitter"></i></a> </li>

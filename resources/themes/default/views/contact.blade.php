@@ -38,21 +38,21 @@
               <div class="contact-info text-center">
                 <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
                 <h4>Call Us</h4>
-              <h6 class="text-gray">Phone: +{{ $contact->phone }}</h6>
+              <h6 class="text-gray">Phone: {{ Setting::get('phone')}}</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
                 <h4>Address</h4>
-                <h6 class="text-gray">{{ $contact->address }}</h6>
+                <h6 class="text-gray">{{ Setting::get('address')}}</h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-4">
               <div class="contact-info text-center">
                 <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
                 <h4>Email</h4>
-                <h6 class="text-gray">{{ $contact->email }}</h6>
+                <h6 class="text-gray">{{ Setting::get('email')}}</h6>
               </div>
             </div>
           </div>
@@ -133,6 +133,7 @@
 
           </div>
           <div class="col-md-5">
+            {{-- <iframe src="{!! Setting::get('map') !!}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> --}}
             {!! $contact->map !!}
           </div>
         </div>

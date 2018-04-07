@@ -13,6 +13,7 @@ use Theme;
 use Breadcrumbs;
 use SEO;
 use URL;
+use Setting;
 
 use App\Gallery;
 use App\Volunteer;
@@ -23,6 +24,7 @@ use App\Event;
 use App\Contact;
 use App\Slide;
 
+
 class FrontController extends Controller
 {
 
@@ -32,6 +34,10 @@ class FrontController extends Controller
     {
         // Load Theme
         Theme::init($this->theme);
+        /* Change Language */
+        Setting::set('language', request()->segment(1));
+        // dd(request()->segment(1));
+        Setting::save();
         // Page Title & Description
         $page_title = "Index";
         $page_description = "This is".$page_title." page";
@@ -209,7 +215,7 @@ class FrontController extends Controller
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Load Data
         $events = New Event();
-        $event = $events->orderBy('id', 'desc')->paginate(2);
+        $event = $events->orderBy('id', 'desc')->paginate(3);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
@@ -314,7 +320,14 @@ class FrontController extends Controller
      *
      * @param  page_title  $value,$page_description $value
      * @return SEO
-     */    
+     */   
+    
+    public function change_language($language)
+    {
+        Setting::set('language', $language);
+        Setting::save();
+    }
+    
     public function _seo($page_title=NULL,$page_description=NULL)
     {
         // SEO
