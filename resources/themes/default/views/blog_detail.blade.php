@@ -121,7 +121,7 @@ s.setAttribute('data-timestamp', +new Date());
                   <article class="post media-post clearfix pb-0 mb-10">
                   <a class="post-thumb" href="#"><img src="{{ Theme::asset('images/article/'.$row->file) }}" width="75px" height="75px" alt=""></a>
                     <div class="post-right">
-                    <h5 class="post-title mt-0"><a href="{{ url('blog/'.$row->id) }}">@if (Request::segment(1)=='en') {!! $row->name_en !!} @else {!! $row->name !!} @endif</a></h5>
+                    <h5 class="post-title mt-0"><a href="{{ url(Setting::get('language').'/blog/'.$row->id) }}">@if (Request::segment(1)=='en') {!! $row->name_en !!} @else {!! $row->name !!} @endif</a></h5>
                     {{--  <p>{!! str_limit($row->description,40) !!}</p>  --}}
                     </div>
                   </article>
