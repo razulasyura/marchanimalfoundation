@@ -26,6 +26,7 @@ Route::group(['prefix' => Setting::get('language')], function () {
     Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
     Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']);
 });
+Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/id', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/en', ['as' => '/', 'uses' => 'FrontController@index']);
 /* Admin */

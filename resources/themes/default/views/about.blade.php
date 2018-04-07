@@ -43,7 +43,16 @@
               </div>
             </div>
           </div>
-          @if (Request::segment(1)=='ien') 
+          @if (Request::segment(1)=='en')
+           <div class="col-sm-12 col-md-5">
+            <h3 class="text-theme-colored text-uppercase mt-0">About Us</h3>
+            <p>Welcome to March Animal Foundation, is a non-profit organization dedicated to save homeless animal, give education, and donate for pet that needs medical treatment in clinic. Our motto is “work with love for animal God’s creature”. 
+            It started by hoping of the founder Dr. Wywy Goulda March as a practicioner, to introduce vet profession as a close profession to society up to remote areas. All this time, veterinarian is known as a rare profession and only for high financial owner. Beside that, so many pet are displaced on the street, and get animal cruelty from people with no good education. It is therefore, our foundation do close approach to resolve this problems.This foundation get full support from many vets as volunteers, not only private practicioners but also vet from animal husbandry department. They have same vision and mission with us to improve vet profession to society with charity action. </p>
+            <p>Hope all animal surround us will get decent living opportunity, which become our duties and obligations to conserve and keep animal being as God’s creatures.</p>
+            <p>Best Regard, <br/><b>March Animal Foundation</b></p>
+          </div> 
+          
+          @else          
           <div class="col-sm-12 col-md-5">
             <h3 class="text-theme-colored text-uppercase mt-0">About Us</h3>
             <p>Selamat datang di March Animal Foundation, sebuah yayasan yang bergerak di bidang social untuk menyelamatkan hewan-hewan terlantar, memberikan edukasi dan bantuan donasi bagi hewan yang membutuhkan penanganan medis di klinik hewan. Motto yayasan kami adalah “Bergerak dengan cinta kasih bagi Hewan Ciptaan Tuhan”.</p>
@@ -54,14 +63,6 @@
             <p>Berjalannya kegiatan ini juga mendapatkan dukungan dari berbagai dokter dinas peternakan di daerah dan dokter praktisi yang memiliki visi misi yang serupa. Sehingga yayasan ini dapat berjalan dengan bantuan tenaga sukarelawan yang membantu dengan senang hati.</p>
             <p>Kiranya hewan-hewan di sekitar kita mendapatkan kesempatan hidup yang layak, yang menjadi tugas dan kewajiban kita bersama untuk melestarikan dan menjaga seluruh makhluk ciptaan Tuhan. </p>
             <p>Salam<br/><b>March Animal Foundation</b></p>
-          </div>
-          @else          
-          <div class="col-sm-12 col-md-5">
-            <h3 class="text-theme-colored text-uppercase mt-0">About Us</h3>
-            <p>Welcome to March Animal Foundation, is a non-profit organization dedicated to save homeless animal, give education, and donate for pet that needs medical treatment in clinic. Our motto is “work with love for animal God’s creature”. 
-            It started by hoping of the founder Dr. Wywy Goulda March as a practicioner, to introduce vet profession as a close profession to society up to remote areas. All this time, veterinarian is known as a rare profession and only for high financial owner. Beside that, so many pet are displaced on the street, and get animal cruelty from people with no good education. It is therefore, our foundation do close approach to resolve this problems.This foundation get full support from many vets as volunteers, not only private practicioners but also vet from animal husbandry department. They have same vision and mission with us to improve vet profession to society with charity action. </p>
-            <p>Hope all animal surround us will get decent living opportunity, which become our duties and obligations to conserve and keep animal being as God’s creatures.</p>
-            <p>Best Regard, <br/><b>March Animal Foundation</b></p>
           </div>
           @endif
         </div>
