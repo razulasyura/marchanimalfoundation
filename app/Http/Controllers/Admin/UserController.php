@@ -22,6 +22,9 @@ class UserController extends Controller
     var $index = 'user/index';
     var $form = 'user/form';
     var $store = 'Admin\UserController@store';
+    var $destroy = 'Admin\UserController@destroy';
+    var $update = 'Admin\UserController@update';
+    var $edit = 'Admin\UserController@edit';
 
     public function __construct(User $user)
     {
@@ -31,8 +34,11 @@ class UserController extends Controller
 
     public function index()
     {
+        $destroy = $this->destroy;
+        $edit = $this->edit;
         $data = $this->users::where('id', '!=', 2)->get();
-        return view($this->index,compact('data'));
+        $pageTitle = 'List User';
+        return view($this->index,compact('data','destroy','edit','pageTitle'));
     }
 
     /**
@@ -44,7 +50,8 @@ class UserController extends Controller
     {
         $method = 'POST';
         $action = $this->store;
-        return view($this->form,compact('method','action'));
+        $pageTitle = 'Create User';
+        return view($this->form,compact('method','action','pageTitle'));
     }
 
     /**
@@ -100,9 +107,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $method = 'POST';
-        $action = 'Admin\UserController@update';
+        $action = $this->update;
         $data = $this->users->findOrFail($id);
-        return view($this->form,compact('data','method','action'));
+        $pageTitle = 'Edit User';
+        return view($this->form,compact('data','method','action','pageTitle'));
     }
 
     /**

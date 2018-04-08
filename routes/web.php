@@ -26,18 +26,36 @@ Route::group(['prefix' => Setting::get('language')], function () {
     Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
     Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']);
 });
+
+/* Route Without Prefix Language */
 Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/id', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/en', ['as' => '/', 'uses' => 'FrontController@index']);
-/* Admin */
-Route::resource('galleries','GalleryController');
+Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@blog_detail']);
+Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
+Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']);
 
+
+
+
+/* Admin */
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
-    Route::get('admin','Admin\AdminController@admin')->middleware('auth');
+    // Route::get('admin','Admin\AdminController@admin')->middleware('auth');
+    Route::get('/','Admin\SlideController@index')->middleware('auth');
     Route::resource('default','Admin\DefaultController')->only(['index','create'])->middleware('auth');
     Route::resource('user','Admin\UserController')->middleware('auth');
     Route::resource('slide','Admin\SlideController')->middleware('auth');
 });
 
+
+Route::get('/image', function()
+{
+    // open an image file
+    $img = Image::make('public/foo.jpg');
+    // now you are able to resize the instance
+    $img->resize(320, 240);
+    // finally we save the image as a new file
+    $img->save('public/bar.jpg');
+});
 

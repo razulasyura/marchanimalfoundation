@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Theme;
-use App\User;
+use App\Slide;
 use Auth;
 use Alert;
+use Image;
+use File;
+// use Carbon\Carbon;
 
 class SlideController extends Controller
 {
@@ -17,22 +21,32 @@ class SlideController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $users;
-    var $mainPage = 'admin/user';
-    var $index = 'user/index';
-    var $form = 'user/form';
+    protected $slides;
+    var $mainPage = 'admin/slide';
+    var $index = 'slide/index';
+    var $form = 'slide/form';
+    var $imageOriginal = 'public/assets/themes/default/images/slide/';
+    
+    var $create = 'Admin\SlideController@create';
+    var $store = 'Admin\SlideController@store';
+    var $destroy = 'Admin\SlideController@destroy';
+    var $edit = 'Admin\SlideController@edit';
+    var $update = 'Admin\SlideController@update';
 
-    public function __construct(User $user)
+    public function __construct(Slide $slide)
     {
-        $this->users = $user;
+        $this->slides = $slide;
         Theme::init('admin');
     }
 
     public function index()
     {
-        $setting = Setting::all();
-        $data = $this->users::where('id', '!=', 2)->get();
-        return view($this->index,compact('data'));
+        $create = $this->create;
+        $destroy = $this->destroy;
+        $edit = $this->edit;
+        $data = $this->slides::All();
+        $pageTitle = 'List Slide';
+        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
     }
 
     /**
@@ -42,9 +56,11 @@ class SlideController extends Controller
      */
     public function create()
     {
-        $method = 'POST';
-        $action = $this->mainPage;
-        return view($this->form,compact('method','action'));
+        // $method = 'POST';
+        $action = $this->store;
+        $pageTitle = 'Create Slide';
+        $image = $this->imageOriginal;
+        return view($this->form,compact('action','pageTitle','image'));
     }
 
     /**
@@ -58,23 +74,29 @@ class SlideController extends Controller
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'email'=>'required|email|unique:users',
-            'password'=>'required'
+            'name_en'=>'required',
+            'description'=>'required',
+            'description_en'=>'required',
+            'file'=>'required|image'
         ]);
-
+        
         /* retrive data */
-        $this->users->name = $request->get('name');
-        $this->users->email = $request->get('email');
-        $this->users->password = bcrypt($request->get('password'));
-
+        $data = $request->except('file');
+        $data['file'] = $filename = date('Ymdhis').'.jpg';
+        // dd($data);
         /* store data */
-        $store = $this->users->save();
+        $store = $this->slides->create($data);
 
         /* redirect and notifiation */
         if($store){
+            // upload image
+            $img = Image::make(Input::file('file'))->fit(1980, 1280)->save($this->imageOriginal.$filename);
+
+            // notice and return to page
             Alert::success('Create Data Success!!');
             return back();
         }else{
+            // notice and return to page
             Alert::error('Create Data Fail!');
             return back();
         }
@@ -99,10 +121,12 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        $method = 'POST';
-        $action = 'admin/user/'.$id;
-        $data = $this->users->findOrFail($id);
-        return view($this->form,compact('data','method','action'));
+        // $method = 'POST';
+        $action = $this->update;
+        $data = $this->slides->findOrFail($id);
+        $pageTitle = 'Edit Slide';
+        $image = $this->imageOriginal;
+        return view($this->form,compact('data','action','pageTitle','image'));
     }
 
     /**
@@ -114,27 +138,29 @@ class SlideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = $this->users::find($id);
-        /* check email */
-        if($user->email!=$request->get('email')){
-            $emailValidation = '|unique:users';
-        }else{
-            $emailValidation = '';
-        }
+        $slide = $this->slides::find($id);
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'email'=>'required|email'.$emailValidation,
-            'password'=>'required'
+            'name_en'=>'required',
+            'description'=>'required',
+            'description_en'=>'required',
+            // 'file'=>'required|image'
         ]);
-
+        
         /* retrive data */
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $user->password = bcrypt($request->get('password'));
+        $slide->name = $request->get('name');
+        $slide->name_en = $request->get('name_en');
+        $slide->description = $request->get('description');
+        $slide->description_en = $request->get('description_en');
+        $slide->file = $filename = date('Ymdhis').'.jpg';
+        if($request->file('file')!=NULL){
+            $delete = File::delete($this->imageOriginal.$slide->file);
+            $img = Image::make(Input::file('file'))->fit(1980, 1280)->save($this->imageOriginal.$filename);
+        }
 
         /* update data */
-        $update = $user->save();
+        $update = $slide->save();
 
         /* redirect and notifiation */
         if($update){
@@ -155,8 +181,9 @@ class SlideController extends Controller
     public function destroy($id)
     {
         /* delete data */
-        $user = $this->users::find($id);
-        $delete = $user->delete();
+        $slide = $this->slides::find($id);
+        $delImage = File::delete($this->imageOriginal.$slide->file);
+        $delete = $slide->delete();
 
         /* redirect and notifiation */
         if($delete){

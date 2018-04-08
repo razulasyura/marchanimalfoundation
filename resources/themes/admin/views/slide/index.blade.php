@@ -12,16 +12,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              {{-- <h3 class="box-title">{{ $pageTitle }}</h3> --}}
+              {{-- <a class="btn btn-primary" href="{{action($create)}}" onclick="return confirm('Are you sure you create new data ?');">Create New Slide</a> --}}
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="tableUser" class="table table-bordered table-striped">
+              <table id="dataTable" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Email</th>
+                  <th>Link</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -31,13 +32,14 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->email }}</td>
+                    <td>{{ $row->link }}</td>
                     <td>
-                      <form action="{{action('Admin\UserController@destroy', $row->id)}}" method="post">
-                        {{csrf_field()}}
-                        <input name="_method" type="hidden" value="DELETE">
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                      </form>
+                    <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
+                    {{-- <form action="{{action($destroy, $row->id)}}" method="POST">
+                      {{csrf_field()}}
+                      <input name="_method" type="hidden" value="DELETE">
+                      <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure you want to edit this data ?');">Delete</button>
+                    </form> --}}
                     </td>
                 </tr>
                 @endforeach
@@ -46,7 +48,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Email</th>
+                  <th>Link</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -71,10 +73,10 @@
 <!-- page script -->
 <script>
   $(function () {
-    $('#tableUser').DataTable({
-      'paging'      : true,
+    $('#dataTable').DataTable({
+      'paging'      : false,
       'lengthChange': false,
-      'searching'   : true,
+      'searching'   : false,
       'ordering'    : true,
       'info'        : false,
       'autoWidth'   : true
