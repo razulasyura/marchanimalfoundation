@@ -17,7 +17,7 @@
     <section class="content">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
             <!-- /.box-header -->
@@ -33,11 +33,6 @@
           <input name="_method" type="hidden" value="PATCH">
           @endif
           <div class="box-body">
-
-          <div class="form-group">
-            <label>Time (ID)</label>
-            <input type="text" name="time" value="{{ $data->time or "" }}" class="form-control" required>
-          </div>
 
           <div class="form-group">
             <label>Name (ID)</label>
@@ -63,16 +58,11 @@
         <!--/.col (left) -->
 
         <!-- right column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-warning">
             <!-- /.box-header -->
           <div class="box-body">
-
-          <div class="form-group">
-            <label>Time (EN)</label>
-            <input type="text" name="time_en" value="{{ $data->time_en or "" }}" class="form-control" required>
-          </div>
 
           <div class="form-group">
             <label>Name (EN)</label>
@@ -108,20 +98,20 @@
           </div>
           
           <div class="form-group">
-            <label>Host</label>
-            <input type="text" name="host" value="{{ $data->host or "" }}" class="form-control" required>
+            <label>Author</label>
+            <input type="text" name="author" value="{{ $data->author or "" }}" class="form-control">
           </div>
 
           <div class="form-group">
-            <label>Location</label>
-            <input type="text" name="location" value="{{ $data->location or "" }}" class="form-control" required>
+            <label>Author Title</label>
+            <input type="text" name="author_title" value="{{ $data->author_title or "" }}" class="form-control">
           </div>
 
           <div class="form-group">
             <label>Documentation Event <a href="#"><small>add Album</small></a></label>
-            <select class="form-control" name="album_id" required>
+            <select class="form-control" name="article_id" required>
               @php ($selected='')
-              @foreach($album as $row)
+              @foreach($article as $row)
                 <option value="{{ $row->id }}" {{$selected}}>{{ $row->name }}</option>
               @endforeach
             </select>
@@ -143,6 +133,6 @@
     <!-- /.content -->
 @stop
 @section('js')
-<script src="//cdn.ckeditor.com/4.9.1/basic/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.9.1/full/ckeditor.js"></script>
 <script>CKEDITOR.replace('editor');CKEDITOR.replace('editor_en');</script>
 @stop

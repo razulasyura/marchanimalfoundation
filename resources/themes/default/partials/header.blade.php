@@ -79,7 +79,7 @@
         <div class="container">
           <nav id="menuzord" class="menuzord default bg-light">
             <ul class="menuzord-menu">
-              <li><a href="{{ url(Setting::get('language').'/home') }}">Home</a></li>
+              <li><a href="{{ url(Setting::get('language').'/') }}">Home</a></li>
               <li><a href="#">About</a>
                 <ul class="dropdown">
                   <li><a href="{{ url(Setting::get('language').'/about') }}">About</a></li>

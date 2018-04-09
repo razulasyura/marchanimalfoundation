@@ -48,6 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('slide','Admin\SlideController')->middleware('auth');
     Route::resource('event','Admin\EventController')->middleware('auth');
     Route::resource('program','Admin\ProgramController')->middleware('auth');
+    Route::resource('blog','Admin\BlogController')->middleware('auth');
 });
 
 
