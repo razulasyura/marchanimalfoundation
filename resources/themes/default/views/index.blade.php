@@ -593,7 +593,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/event/front/'.$row->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/event/'.$row->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-15 pr-15">
                     <div class="display-table">
                       <div class="display-table-cell">

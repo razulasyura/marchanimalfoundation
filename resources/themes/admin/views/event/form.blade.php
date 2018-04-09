@@ -1,4 +1,6 @@
 @extends('layouts.master')
+@section('css')
+@stop
 @section('content')
     {{-- error notice --}}
     @if ($errors->any())
@@ -18,9 +20,6 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-primary">
-            {{-- <div class="box-header with-border">
-              <h3 class="box-title">{{ $pageTitle }}</h3>
-            </div> --}}
             <!-- /.box-header -->
             <!-- form start -->
           @if(isset($data))
@@ -34,15 +33,27 @@
           <input name="_method" type="hidden" value="PATCH">
           @endif
           <div class="box-body">
+
+          <div class="form-group">
+            <label>Time (ID)</label>
+            <input type="text" name="time" value="{{ $data->time or "" }}" class="form-control" required>
+          </div>
+
           <div class="form-group">
             <label>Name (ID)</label>
             <input type="text" name="name" value="{{ $data->name or "" }}" class="form-control" required>
           </div>
 
           <div class="form-group">
+            <label>Subtitle</label>
+            <textarea rows="4" name="description_name" class="form-control" required>{{ $data->description_name or ""}}</textarea>
+          </div>
+
+          <div class="form-group">
             <label>Description (ID)</label>
             <textarea id="editor" rows="4" name="description" class="form-control" required>{{ $data->description or ""}}</textarea>
           </div>
+
           </div>
           <!-- /.box-body -->
           </div>
@@ -55,14 +66,22 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-warning">
-            {{-- <div class="box-header with-border">
-              <h3 class="box-title">{{ $pageTitle }}</h3>
-            </div> --}}
             <!-- /.box-header -->
           <div class="box-body">
+
+          <div class="form-group">
+            <label>Time (EN)</label>
+            <input type="text" name="time_en" value="{{ $data->time_en or "" }}" class="form-control" required>
+          </div>
+
           <div class="form-group">
             <label>Name (EN)</label>
             <input type="text" name="name_en" value="{{ $data->name_en or "" }}" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label>Subtitle</label>
+            <textarea rows="4" name="description_name_en" class="form-control" required>{{ $data->description_name_en or ""}}</textarea>
           </div>
 
           <div class="form-group">
@@ -79,20 +98,33 @@
         <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-default">
-            {{-- <div class="box-header with-border">
-              <h3 class="box-title">{{ $pageTitle }}</h3>
-            </div> --}}
             <!-- /.box-header -->
             <!-- form start -->
           <div class="box-body">
-          <div class="form-group">
-            <label>Link</label>
-            <input type="text" name="link" value="{{ $data->link or "#" }}" class="form-control">
-          </div>
 
           <div class="form-group">
             <label>Image @if(isset($data))<a href="{{ url($image.$data->file)}}" target="_blank"><small>{{ $data->file}}</small></a>@endif</label>
-            <input type="file" name="file" class="form-control">
+            <input type="file" name="file" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Host</label>
+            <input type="text" name="host" value="{{ $data->host or "" }}" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" name="location" value="{{ $data->location or "" }}" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label>Documentation Event <a href="#"><small>add Album</small></a></label>
+            <select class="form-control" name="album_id" required>
+              @php ($selected='')
+              @foreach($album as $row)
+                <option value="{{ $row->id }}" {{$selected}}>{{ $row->name }}</option>
+              @endforeach
+            </select>
           </div>
 
           </div>

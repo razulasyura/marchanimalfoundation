@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/admin';
+    protected $redirectTo = '/admin/';
 
     /**
      * Create a new controller instance.
@@ -45,9 +45,8 @@ class LoginController extends Controller
     {
         Theme::init($this->theme);
         Alert::success('Good job!');
-        $page_title = "general.text.welcome";
-        $page_description = "This is the welcome page";  
-        return view('login', compact('page_title'));
+        $pageTitle = "Login";
+        return view('login', compact('pageTitle'));
     }
 
     /* override logout */

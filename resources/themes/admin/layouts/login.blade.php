@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title></title>
+  <title>{{ Setting::get('application').' | '.$pageTitle }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -33,7 +33,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>{{ config('app.name', 'Laravel') }}</b></a>
+    <a href="#"><b>{{ Setting::get('application') }}</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -75,7 +75,7 @@
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
+    {{-- <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
@@ -85,7 +85,7 @@
     <!-- /.social-auth-links -->
 
     <a href="{{ route('password.request') }}">I forgot my password</a><br>
-    <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+    <a href="{{ route('register') }}" class="text-center">Register a new membership</a> --}}
 
   </div>
   <!-- /.login-box-body -->

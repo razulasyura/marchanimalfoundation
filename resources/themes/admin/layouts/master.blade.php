@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ Setting::get('application') }}</title>
+  <title>{{ Setting::get('application').' | '.$pageTitle }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ Theme::asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -80,7 +80,7 @@ desired effect
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+          {{-- <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -95,7 +95,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                        <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/maf.png')}}" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -112,11 +112,11 @@ desired effect
               </li>
               <li class="footer"><a href="#">See All Messages</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- /.messages-menu -->
 
           <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
+          {{-- <li class="dropdown notifications-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
@@ -137,9 +137,9 @@ desired effect
               </li>
               <li class="footer"><a href="#">View all</a></li>
             </ul>
-          </li>
+          </li> --}}
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
+          {{-- <li class="dropdown tasks-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
@@ -174,29 +174,29 @@ desired effect
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+              <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/maf.png')}}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/maf.png')}}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{ Auth::user()->name }}
+                  {{-- <small>Member since Nov. 2012</small> --}}
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
                   </div>
@@ -206,14 +206,14 @@ desired effect
                   <div class="col-xs-4 text-center">
                     <a href="#">Friends</a>
                   </div>
-                </div>
+                </div> --}}
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+                {{-- <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                </div> --}}
                 <div class="pull-right">
                   <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">Sign out</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -240,17 +240,17 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+          <img src="{{ Theme::asset('bower_components/admin-lte/dist/img/maf.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ Auth::user()->name }}</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
 
       <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
+      {{-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -258,12 +258,12 @@ desired effect
               </button>
             </span>
         </div>
-      </form>
+      </form> --}}
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Menu</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>

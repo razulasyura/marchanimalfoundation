@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('default','Admin\DefaultController')->only(['index','create'])->middleware('auth');
     Route::resource('user','Admin\UserController')->middleware('auth');
     Route::resource('slide','Admin\SlideController')->middleware('auth');
+    Route::resource('event','Admin\EventController')->middleware('auth');
 });
 
 
