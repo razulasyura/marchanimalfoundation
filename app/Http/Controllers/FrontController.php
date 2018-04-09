@@ -51,7 +51,7 @@ class FrontController extends Controller
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;
-        $event = $events->all()->take(4);
+        $event = $events->where('is_deleted','F')->take(4)->get();
         // Render View
         return view(strtolower($page_title), compact('page_title','slide','program','event'));
     }
@@ -67,7 +67,7 @@ class FrontController extends Controller
         $this->_seo($page_title,$page_description);
         // Load Data    
         $blogs = new Blog();
-        $blog = $blogs->where('article_id',99)->orderBy('id','desc')->paginate(3);
+        $blog = $blogs->where('article_id',99)->where('is_deleted','F')->orderBy('id','desc')->paginate(3);
         // Render View
         return view(strtolower($page_title), compact('page_title','blog'));
     }
@@ -84,37 +84,9 @@ class FrontController extends Controller
         // Load Data
         $blogs = New Blog();
         $blog = $blogs->findOrFail($id);
-        $list = $blogs->where('article_id',$blog->article_id)->take(5)->get();
+        $list = $blogs->where('article_id',$blog->article_id)->where('is_deleted','F')->take(5)->get();
         // Render View
         return view(strtolower($page_title), compact('page_title','blog','list'));
-    }
-
-    public function adoption()
-    {
-        // Load Theme
-        Theme::init($this->theme);
-        // Page Title & Description
-        $page_title = "Adoption";
-        $page_description = "This is".$page_title." page";
-        // SEO
-        $this->_seo($page_title,$page_description);
-        // Breadcrumb
-        // Render View
-        return view(strtolower($page_title), compact('page_title'));
-    }
-
-    public function adoption_detail()
-    {
-        // Load Theme
-        Theme::init($this->theme);
-        // Page Title & Description
-        $page_title = "adoption_detail";
-        $page_description = "This is".$page_title." page";
-        // SEO
-        $this->_seo($page_title,$page_description);
-        // Breadcrumb
-        // Render View
-        return view(strtolower($page_title), compact('page_title'));
     }
 
     public function about()
@@ -216,7 +188,7 @@ class FrontController extends Controller
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Load Data
         $events = New Event();
-        $event = $events->orderBy('id', 'desc')->paginate(3);
+        $event = $events->where('is_deleted','F')->orderBy('id', 'desc')->paginate(3);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','event'));
     }
@@ -275,7 +247,7 @@ class FrontController extends Controller
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Load Data
         $programs = new Program();
-        $program = $programs->all();
+        $program = $programs->where('is_deleted','F')->get();
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','program'));
     }
@@ -293,7 +265,7 @@ class FrontController extends Controller
         $programs = New Program();
         $program = $programs->findOrFail($id);
         $blogs = new Blog();
-        $blog = $blogs->where('article_id',$program->id)->orderBy('id','desc')->paginate(3);
+        $blog = $blogs->where('article_id',$program->id)->where('is_deleted','F')->orderBy('id','desc')->paginate(3);
         // Breadcrumb
         $breadcrumbs = $this->_breadcrumbs($page_title);
         // Render View

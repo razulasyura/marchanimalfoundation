@@ -211,13 +211,13 @@ desired effect
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                {{-- <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div> --}}
+                <div class="pull-left">
+                  <a href="{{ url('admin/user/'.Auth::user()->id.'/edit/')  }}" class="btn btn-default btn-flat">Profile</a>
+                </div>
                 <div class="pull-right">
                   <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">Sign out</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
+                  {{ csrf_field() }}
                   </form>
                 </div>
               </li>
@@ -265,7 +265,7 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        {{-- <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
@@ -277,7 +277,16 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li> --}}
+        <li><a href="{{ url('/admin/slide') }}"><i class="fa fa-link"></i> <span>Slide</span></a></li>
+        <li><a href="{{ url('/admin/organizer') }}"><i class="fa fa-link"></i> <span>Organizer</span></a></li>
+        <li><a href="{{ url('/admin/program') }}"><i class="fa fa-link"></i> <span>Program</span></a></li>
+        <li><a href="{{ url('/admin/event') }}"><i class="fa fa-link"></i> <span>Event</span></a></li>
+        <li><a href="{{ url('/admin/blog') }}"><i class="fa fa-link"></i> <span>Article</span></a></li>
+        <li><a href="{{ url('/admin/volunteer') }}"><i class="fa fa-link"></i> <span>Volunteer</span></a></li>
+        <li><a href="{{ url('/admin/album') }}"><i class="fa fa-link"></i> <span>Album</span></a></li>
+        <li><a href="{{ url('/admin/gallery') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
+        <li><a href="{{ url('/admin/contact') }}"><i class="fa fa-link"></i> <span>Contact</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

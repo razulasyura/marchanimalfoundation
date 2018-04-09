@@ -27,7 +27,7 @@
             <div class="blog-posts single-post">
               <article class="post clearfix mb-0">
                 <div class="entry-header">
-                  <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/article/'.$blog->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
+                  <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/article/original/'.$blog->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
                 </div>
                 <div class="entry-content">
                   <div class="entry-meta media no-bg no-border mt-15 pb-20">
@@ -119,7 +119,7 @@ s.setAttribute('data-timestamp', +new Date());
                 <div class="latest-posts">
                   @foreach($list as $row)
                   <article class="post media-post clearfix pb-0 mb-10">
-                  <a class="post-thumb" href="#"><img src="{{ Theme::asset('images/article/'.$row->file) }}" width="75px" height="75px" alt=""></a>
+                  <a class="post-thumb" href="#"><img src="{{ Theme::asset('images/article/'.$row->file) }}" width="40%" height="40%" alt=""></a>
                     <div class="post-right">
                     <h5 class="post-title mt-0"><a href="{{ url(Setting::get('language').'/blog/'.$row->id) }}">@if (Request::segment(1)=='en') {!! $row->name_en !!} @else {!! $row->name !!} @endif</a></h5>
                     {{--  <p>{!! str_limit($row->description,40) !!}</p>  --}}

@@ -149,6 +149,7 @@ class BlogController extends Controller
     {
         ini_set('memory_limit','160M');
         $blog = $this->blogs::find($id);
+        $oldFile = $blog->file;
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
@@ -159,7 +160,7 @@ class BlogController extends Controller
             'description_en'=>'required',
             // 'author'=>'required',
             // 'author_title'=>'required',
-            'file'=>'required|image',
+            // 'file'=>'required|image',
             'article_id'=>'required',
         ]);
         
@@ -167,17 +168,17 @@ class BlogController extends Controller
         $blog->name = $request->get('name');
         $blog->name_en = $request->get('name_en');
         $blog->description_name = $request->get('description_name');
-        $blog->description_name_en = $request->get('description_en');
+        $blog->description_name_en = $request->get('description_name_en');
         $blog->description = $request->get('description');
         $blog->description_en = $request->get('description_en');
         $blog->author = $request->get('author');
-        $blog->aurhor_title = $request->get('aurhor_title');
-        $blog->file = $filename = date('Ymdhis').'.jpg';
+        $blog->author_title = $request->get('author_title');
         $blog->article_id = $request->get('article_id');
         
         if($request->file('file')!=NULL){
-            File::delete($this->imageOriginal.$blog->file);
-            File::delete($this->imageOriginal.'original/'.$blog->file);
+            $blog->file = $filename = date('Ymdhis').'.jpg';
+            File::delete($this->imageOriginal.$oldFile);
+            File::delete($this->imageOriginal.'original/'.$oldFile);
             $img = Image::make(Input::file('file'))->fit(265,195)->save($this->imageOriginal.$filename);
             $imgDetail = Image::make(Input::file('file'))->fit(540,480)->save($this->imageOriginal.'original/'.$filename);
         }

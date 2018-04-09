@@ -154,7 +154,9 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+        ini_set('memory_limit','160M');
         $event = $this->events::find($id);
+        $oldFile = $event->file;
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
@@ -167,7 +169,7 @@ class EventController extends Controller
             'time'=>'required',
             'time_en'=>'required',
             'location'=>'required',
-            'file'=>'required|image',
+        // 'file'=>'required|image',
             'album_id'=>'required',
         ]);
         
@@ -182,12 +184,12 @@ class EventController extends Controller
         $event->time = $request->get('time');
         $event->time_en = $request->get('time_en');
         $event->location = $request->get('location');
-        $event->file = $filename = date('Ymdhis').'.jpg';
         $event->album_id = $request->get('album_id');
         
         if($request->file('file')!=NULL){
-            $delete = File::delete($this->imageOriginal.$event->file);
-            $delete = File::delete($this->imageOriginal.'detail/'.$event->file);
+            $event->file = $filename = date('Ymdhis').'.jpg';
+            $delete = File::delete($this->imageOriginal.$oldFile);
+            $delete = File::delete($this->imageOriginal.'detail/'.$oldFile);
             $img = Image::make(Input::file('file'))->fit(1980, 1280)->save($this->imageOriginal.$filename);
             $imgDetail = Image::make(Input::file('file'))->fit(755,480)->save($this->imageOriginal.'detail/'.$filename);
         }

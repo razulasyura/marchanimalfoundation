@@ -49,16 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('event','Admin\EventController')->middleware('auth');
     Route::resource('program','Admin\ProgramController')->middleware('auth');
     Route::resource('blog','Admin\BlogController')->middleware('auth');
+    Route::resource('volunteer','Admin\VolunteerController')->middleware('auth');
 });
 
-
-Route::get('/image', function()
-{
-    // open an image file
-    $img = Image::make('public/foo.jpg');
-    // now you are able to resize the instance
-    $img->resize(320, 240);
-    // finally we save the image as a new file
-    $img->save('public/bar.jpg');
-});
 

@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
     
 class Gallery extends Model
 {
+    protected $fillable = [
+        'name', 'description','location','file','album_id'
+    ];
+
     public function get()
     {
         $query = DB::table('galleries')

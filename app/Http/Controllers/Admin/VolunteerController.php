@@ -6,14 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Theme;
-use App\Program;
+use App\Volunteer;
 use Auth;
 use Alert;
-use Image;
-use File;
-// use Carbon\Carbon;
 
-class ProgramController extends Controller
+class VolunteerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,21 +18,19 @@ class ProgramController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $programs;
-    var $mainPage = 'admin/program';
-    var $index = 'program/index';
-    var $form = 'program/form';
-    var $imageOriginal = 'public/assets/themes/default/images/program/';
+    protected $volunteers;
+    var $mainPage = 'admin/volunteer';
+    var $index = 'volunteer/index';
+    var $form = 'volunteer/form';
+    var $create = 'Admin\VolunteerController@create';
+    var $store = 'Admin\VolunteerController@store';
+    var $destroy = 'Admin\VolunteerController@destroy';
+    var $edit = 'Admin\VolunteerController@edit';
+    var $update = 'Admin\VolunteerController@update';
 
-    var $create = 'Admin\ProgramController@create';
-    var $store = 'Admin\ProgramController@store';
-    var $destroy = 'Admin\ProgramController@destroy';
-    var $edit = 'Admin\ProgramController@edit';
-    var $update = 'Admin\ProgramController@update';
-
-    public function __construct(Program $program)
+    public function __construct(Volunteer $volunteer)
     {
-        $this->programs = $program;
+        $this->volunteers = $volunteer;
         Theme::init('admin');
     }
 
@@ -44,8 +39,8 @@ class ProgramController extends Controller
         $create = $this->create;
         $destroy = $this->destroy;
         $edit = $this->edit;
-        $data = $this->programs::where('is_deleted','F')->get();
-        $pageTitle = 'List Program';
+        $data = $this->volunteers::All();
+        $pageTitle = 'List Volunteer';
         return view($this->index,compact('data','edit','destroy','pageTitle','create'));
     }
 
@@ -58,9 +53,8 @@ class ProgramController extends Controller
     {
         // $method = 'POST';
         $action = $this->store;
-        $pageTitle = 'Create Program';
-        $image = $this->imageOriginal;
-        return view($this->form,compact('action','pageTitle','image'));
+        $pageTitle = 'Create Volunteer';
+        return view($this->form,compact('action','pageTitle'));
     }
 
     /**
@@ -71,32 +65,24 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        ini_set('memory_limit','160M');
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
             'name_en'=>'required',
-            'description_name'=>'required',
-            'description_name_en'=>'required',
             'description'=>'required',
             'description_en'=>'required',
-            'file'=>'required|image',
+            'file'=>'required|image'
         ]);
         
         /* retrive data */
-        $data = $request->except('file');
+        $data = $request->all();
         $data['file'] = $filename = date('Ymdhis').'.jpg';
         // dd($data);
         /* store data */
-        $store = $this->programs->create($data);
+        $store = $this->volunteers->create($data);
 
         /* redirect and notifiation */
         if($store){
-            // upload image
-            $img = Image::make(Input::file('file'))->fit(360, 220)->save($this->imageOriginal.$filename);
-            $imgDetail = Image::make(Input::file('file'))->fit(960,720)->save($this->imageOriginal.'detail/'.$filename);
-            $imgFront = Image::make(Input::file('file'))->fit(290,290)->save($this->imageOriginal.'front/'.$filename);
-
             // notice and return to page
             Alert::success('Create Data Success!!');
             return back();
@@ -128,10 +114,9 @@ class ProgramController extends Controller
     {
         // $method = 'POST';
         $action = $this->update;
-        $data = $this->programs->findOrFail($id);
-        $pageTitle = 'Edit Program';
-        $image = $this->imageOriginal;
-        return view($this->form,compact('data','action','pageTitle','image'));
+        $data = $this->volunteers->findOrFail($id);
+        $pageTitle = 'Edit Volunteer';
+        return view($this->form,compact('data','action','pageTitle'));
     }
 
     /**
@@ -143,39 +128,23 @@ class ProgramController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $program = $this->programs::find($id);
-        $oldFile = $program->file;
+        $volunteer = $this->volunteers::find($id);
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
             'name_en'=>'required',
-            'description_name'=>'required',
-            'description_name_en'=>'required',
             'description'=>'required',
             'description_en'=>'required',
-            // 'file'=>'required|image',
         ]);
         
         /* retrive data */
-        $program->name = $request->get('name');
-        $program->name_en = $request->get('name_en');
-        $program->description_name = $request->get('description_name');
-        $program->description_name_en = $request->get('description_en');
-        $program->description = $request->get('description');
-        $program->description_en = $request->get('description_en');
-        
-        if($request->file('file')!=NULL){
-            $program->file = $filename = date('Ymdhis').'.jpg';        
-            $delete = File::delete($this->imageOriginal.$oldFile);
-            $delete = File::delete($this->imageOriginal.'detail/'.$oldFile);
-            $delete = File::delete($this->imageOriginal.'front/'.$oldFile);
-            $img = Image::make(Input::file('file'))->fit(360, 220)->save($this->imageOriginal.$filename);
-            $imgDetail = Image::make(Input::file('file'))->fit(960,720)->save($this->imageOriginal.'detail/'.$filename);
-            $imgFront = Image::make(Input::file('file'))->fit(290,290)->save($this->imageOriginal.'front/'.$filename);
-        }
+        $volunteer->name = $request->get('name');
+        $volunteer->name_en = $request->get('name_en');
+        $volunteer->description = $request->get('description');
+        $volunteer->description_en = $request->get('description_en');
 
         /* update data */
-        $update = $program->save();
+        $update = $volunteer->save();
 
         /* redirect and notifiation */
         if($update){
@@ -196,9 +165,8 @@ class ProgramController extends Controller
     public function destroy($id)
     {
         /* delete data */
-        $program = $this->programs::find($id);
-        $program->is_deleted = 'T';
-        $delete = $program->save();
+        $volunteer = $this->volunteers::find($id);
+        $delete = $volunteer->delete();
 
         /* redirect and notifiation */
         if($delete){
