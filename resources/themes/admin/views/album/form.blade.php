@@ -37,13 +37,14 @@
           </div>
 
           <div class="form-group">
-            <label>Location</label>
-            <input type="text" name="location" value="{{ $data->location or "" }}" class="form-control" required>
+            <label>Description</label>
+            <textarea name="description" class="form-control" required>{{ $data->description or "" }}</textarea>
           </div>
           </div>
           <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
           </div>
+            </form>
           <!-- /.box-body -->
           </div>
           <!-- /.box -->
@@ -57,6 +58,4 @@
     <!-- /.content -->
 @stop
 @section('js')
-<script src="//cdn.ckeditor.com/4.9.1/basic/ckeditor.js"></script>
-<script>CKEDITOR.replace('editor');CKEDITOR.replace('editor_en');</script>
 @stop

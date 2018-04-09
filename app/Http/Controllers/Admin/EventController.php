@@ -108,11 +108,11 @@ class EventController extends Controller
 
             // notice and return to page
             Alert::success('Create Data Success!!');
-            return back();
+            return redirect($this->mainPage);
         }else{
             // notice and return to page
             Alert::error('Create Data Fail!');
-            return back();
+            return redirect($this->mainPage);
         }
     }
 

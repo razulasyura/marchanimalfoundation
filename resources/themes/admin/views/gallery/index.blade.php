@@ -12,7 +12,6 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              {{-- <h3 class="box-title">{{ $pageTitle }}</h3> --}}
               <a class="btn btn-primary" href="{{action($create)}}" onclick="return confirm('Are you sure you create new data ?');">Create New</a>
             </div>
             <!-- /.box-header -->
@@ -22,7 +21,6 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Location</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -31,8 +29,7 @@
                 @foreach($data as $row)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $row->name }}</td>
-                    <td>{{ $row->location }}</td>
+                    <td><img width="20%" height="20%" src="{{url($image.$row->file)}}"></td>
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
                     <form action="{{action($destroy, $row->id)}}" method="POST">
@@ -48,7 +45,6 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Location</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -74,11 +70,11 @@
 <script>
   $(function () {
     $('#dataTable').DataTable({
-      'paging'      : false,
+      'paging'      : true,
       'lengthChange': false,
       'searching'   : false,
       'ordering'    : true,
-      'info'        : false,
+      'info'        : true,
       'autoWidth'   : true
     })
   })

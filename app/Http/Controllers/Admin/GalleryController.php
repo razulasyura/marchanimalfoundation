@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Theme;
-use App\Volunteer;
+use App\Gallery;
 use Auth;
 use Alert;
+use Image;
+use File;
+// use Carbon\Carbon;
 
-class VolunteerController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,19 +21,21 @@ class VolunteerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $volunteers;
-    var $mainPage = 'admin/volunteer';
-    var $index = 'volunteer/index';
-    var $form = 'volunteer/form';
-    var $create = 'Admin\VolunteerController@create';
-    var $store = 'Admin\VolunteerController@store';
-    var $destroy = 'Admin\VolunteerController@destroy';
-    var $edit = 'Admin\VolunteerController@edit';
-    var $update = 'Admin\VolunteerController@update';
+    protected $galleries;
+    var $mainPage = 'admin/gallery';
+    var $index = 'gallery/index';
+    var $form = 'gallery/form';
+    var $imageLocation = 'public/assets/themes/default/images/gallery/';
+    
+    var $create = 'Admin\GalleryController@create';
+    var $store = 'Admin\GalleryController@store';
+    var $destroy = 'Admin\GalleryController@destroy';
+    var $edit = 'Admin\GalleryController@edit';
+    var $update = 'Admin\GalleryController@update';
 
-    public function __construct(Volunteer $volunteer)
+    public function __construct(Gallery $gallery)
     {
-        $this->volunteers = $volunteer;
+        $this->galleries = $gallery;
         Theme::init('admin');
     }
 
@@ -39,9 +44,10 @@ class VolunteerController extends Controller
         $create = $this->create;
         $destroy = $this->destroy;
         $edit = $this->edit;
-        $data = $this->volunteers::All();
-        $pageTitle = 'List Volunteer';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        $data = $this->galleries::All();
+        $pageTitle = 'List Gallery';
+        $image = $this->imageLocation;
+        return view($this->index,compact('data','edit','destroy','pageTitle','create','image'));
     }
 
     /**
@@ -53,8 +59,9 @@ class VolunteerController extends Controller
     {
         // $method = 'POST';
         $action = $this->store;
-        $pageTitle = 'Create Volunteer';
-        return view($this->form,compact('action','pageTitle'));
+        $pageTitle = 'Create Gallery';
+        $image = $this->imageLocation;
+        return view($this->form,compact('action','pageTitle','image'));
     }
 
     /**
@@ -68,16 +75,23 @@ class VolunteerController extends Controller
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'location'=>'required',
+            'description'=>'required',
+            'file'=>'required|image'
         ]);
         
         /* retrive data */
-        $data = $request->all();
+        $data = $request->except('file');
+        $data['file'] = $filename = date('Ymdhis').'.jpg';
+        // dd($data);
         /* store data */
-        $store = $this->volunteers->create($data);
+        $store = $this->galleries->create($data);
 
         /* redirect and notifiation */
         if($store){
+            // upload image
+            $img = Image::make(Input::file('file'))->fit(450, 250)->save($this->imageLocation.$filename);
+            $imgOriginal = Image::make(Input::file('file'))->save($this->imageLocation.'original/'.$filename);
+
             // notice and return to page
             Alert::success('Create Data Success!!');
             return redirect($this->mainPage);
@@ -109,9 +123,10 @@ class VolunteerController extends Controller
     {
         // $method = 'POST';
         $action = $this->update;
-        $data = $this->volunteers->findOrFail($id);
-        $pageTitle = 'Edit Volunteer';
-        return view($this->form,compact('data','action','pageTitle'));
+        $data = $this->galleries->findOrFail($id);
+        $pageTitle = 'Edit Gallery';
+        $image = $this->imageLocation;
+        return view($this->form,compact('data','action','pageTitle','image'));
     }
 
     /**
@@ -123,19 +138,31 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $volunteer = $this->volunteers::find($id);
+        $gallery = $this->galleries::find($id);
+        $oldFile = $gallery->file;
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'location'=>'required',
+            'description'=>'required',
+            // 'file'=>'required|image'
         ]);
         
         /* retrive data */
-        $volunteer->name = $request->get('name');
-        $volunteer->location = $request->get('location');
+        $gallery->name = $request->get('name');
+        $gallery->name_en = $request->get('name_en');
+        $gallery->description = $request->get('description');
+        $gallery->description_en = $request->get('description_en');
+        if($request->file('file')!=NULL){
+            $gallery->file = $filename = date('Ymdhis').'.jpg';        
+            $delete = File::delete($this->imageLocation.$oldFile);
+            $delete = File::delete($this->imageLocation.'original/'.$oldFile);
+            $img = Image::make(Input::file('file'))->fit(1980, 1280)->save($this->imageLocation.$filename);
+            $img = Image::make(Input::file('file'))->save($this->imageLocation.'original/'.$filename);
+
+        }
 
         /* update data */
-        $update = $volunteer->save();
+        $update = $gallery->save();
 
         /* redirect and notifiation */
         if($update){
@@ -156,8 +183,10 @@ class VolunteerController extends Controller
     public function destroy($id)
     {
         /* delete data */
-        $volunteer = $this->volunteers::find($id);
-        $delete = $volunteer->delete();
+        $gallery = $this->galleries::find($id);
+        $delImage = File::delete($this->imageLocation.$gallery->file);
+        $delImage = File::delete($this->imageLocation.'original/'.$gallery->file);
+        $delete = $gallery->delete();
 
         /* redirect and notifiation */
         if($delete){

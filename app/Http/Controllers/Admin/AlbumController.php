@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Theme;
-use App\Volunteer;
+use App\Album;
 use Auth;
 use Alert;
 
-class VolunteerController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,19 +18,19 @@ class VolunteerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    protected $volunteers;
-    var $mainPage = 'admin/volunteer';
-    var $index = 'volunteer/index';
-    var $form = 'volunteer/form';
-    var $create = 'Admin\VolunteerController@create';
-    var $store = 'Admin\VolunteerController@store';
-    var $destroy = 'Admin\VolunteerController@destroy';
-    var $edit = 'Admin\VolunteerController@edit';
-    var $update = 'Admin\VolunteerController@update';
+    protected $albums;
+    var $mainPage = 'admin/album';
+    var $index = 'album/index';
+    var $form = 'album/form';
+    var $create = 'Admin\AlbumController@create';
+    var $store = 'Admin\AlbumController@store';
+    var $destroy = 'Admin\AlbumController@destroy';
+    var $edit = 'Admin\AlbumController@edit';
+    var $update = 'Admin\AlbumController@update';
 
-    public function __construct(Volunteer $volunteer)
+    public function __construct(Album $album)
     {
-        $this->volunteers = $volunteer;
+        $this->albums = $album;
         Theme::init('admin');
     }
 
@@ -39,8 +39,8 @@ class VolunteerController extends Controller
         $create = $this->create;
         $destroy = $this->destroy;
         $edit = $this->edit;
-        $data = $this->volunteers::All();
-        $pageTitle = 'List Volunteer';
+        $data = $this->albums::where('is_deleted','F')->get();
+        $pageTitle = 'List Album';
         return view($this->index,compact('data','edit','destroy','pageTitle','create'));
     }
 
@@ -53,7 +53,7 @@ class VolunteerController extends Controller
     {
         // $method = 'POST';
         $action = $this->store;
-        $pageTitle = 'Create Volunteer';
+        $pageTitle = 'Create Album';
         return view($this->form,compact('action','pageTitle'));
     }
 
@@ -68,13 +68,14 @@ class VolunteerController extends Controller
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'location'=>'required',
+            'description'=>'required',
         ]);
         
         /* retrive data */
         $data = $request->all();
+        // dd($data);
         /* store data */
-        $store = $this->volunteers->create($data);
+        $store = $this->albums->create($data);
 
         /* redirect and notifiation */
         if($store){
@@ -107,10 +108,9 @@ class VolunteerController extends Controller
      */
     public function edit($id)
     {
-        // $method = 'POST';
         $action = $this->update;
-        $data = $this->volunteers->findOrFail($id);
-        $pageTitle = 'Edit Volunteer';
+        $data = $this->albums->findOrFail($id);
+        $pageTitle = 'Edit Album';
         return view($this->form,compact('data','action','pageTitle'));
     }
 
@@ -123,19 +123,19 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $volunteer = $this->volunteers::find($id);
+        $album = $this->albums::find($id);
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
-            'location'=>'required',
+            'description'=>'required',
         ]);
         
         /* retrive data */
-        $volunteer->name = $request->get('name');
-        $volunteer->location = $request->get('location');
+        $album->name = $request->get('name');
+        $album->description = $request->get('description');
 
         /* update data */
-        $update = $volunteer->save();
+        $update = $album->save();
 
         /* redirect and notifiation */
         if($update){
@@ -156,8 +156,9 @@ class VolunteerController extends Controller
     public function destroy($id)
     {
         /* delete data */
-        $volunteer = $this->volunteers::find($id);
-        $delete = $volunteer->delete();
+        $album = $this->albums::find($id);
+        $album->is_deleted = 'T';
+        $delete = $album->save();
 
         /* redirect and notifiation */
         if($delete){

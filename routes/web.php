@@ -50,6 +50,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('program','Admin\ProgramController')->middleware('auth');
     Route::resource('blog','Admin\BlogController')->middleware('auth');
     Route::resource('volunteer','Admin\VolunteerController')->middleware('auth');
+    Route::resource('album','Admin\AlbumController')->middleware('auth');
+    Route::resource('gallery','Admin\GalleryController')->middleware('auth');
 });
 
 

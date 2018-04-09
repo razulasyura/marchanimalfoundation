@@ -94,11 +94,11 @@ class SlideController extends Controller
 
             // notice and return to page
             Alert::success('Create Data Success!!');
-            return back();
+            return redirect($this->mainPage);
         }else{
             // notice and return to page
             Alert::error('Create Data Fail!');
-            return back();
+            return redirect($this->mainPage);
         }
     }
 
@@ -139,6 +139,7 @@ class SlideController extends Controller
     public function update(Request $request, $id)
     {
         $slide = $this->slides::find($id);
+        $oldFile = $slide->file;
         /* validation */
         $this->validate(request(),[
             'name'=>'required',
@@ -153,9 +154,9 @@ class SlideController extends Controller
         $slide->name_en = $request->get('name_en');
         $slide->description = $request->get('description');
         $slide->description_en = $request->get('description_en');
-        $slide->file = $filename = date('Ymdhis').'.jpg';
         if($request->file('file')!=NULL){
-            $delete = File::delete($this->imageOriginal.$slide->file);
+            $slide->file = $filename = date('Ymdhis').'.jpg';        
+            $delete = File::delete($this->imageOriginal.$oldFile);
             $img = Image::make(Input::file('file'))->fit(1980, 1280)->save($this->imageOriginal.$filename);
         }
 

@@ -18,6 +18,9 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-primary">
+            {{-- <div class="box-header with-border">
+              <h3 class="box-title">{{ $pageTitle }}</h3>
+            </div> --}}
             <!-- /.box-header -->
             <!-- form start -->
           @if(isset($data))
@@ -37,14 +40,21 @@
           </div>
 
           <div class="form-group">
-            <label>Location</label>
-            <input type="text" name="location" value="{{ $data->location or "" }}" class="form-control" required>
+            <label>Description</label>
+            <textarea rows="2" name="description" class="form-control" required>{{ $data->description or ""}}</textarea>
           </div>
+
+          <div class="form-group">
+            <label>Image @if(isset($data))<a href="{{ url($image.$data->file)}}" target="_blank"><small>{{ $data->file}}</small></a>@endif</label>
+            <input type="file" name="file" class="form-control">
           </div>
-          <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+          
           </div>
           <!-- /.box-body -->
+          <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
           </div>
           <!-- /.box -->
 
@@ -57,6 +67,4 @@
     <!-- /.content -->
 @stop
 @section('js')
-<script src="//cdn.ckeditor.com/4.9.1/basic/ckeditor.js"></script>
-<script>CKEDITOR.replace('editor');CKEDITOR.replace('editor_en');</script>
 @stop
