@@ -22,7 +22,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Location</th>
+                  {{-- <th>Location</th> --}}
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -32,7 +32,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->location }}</td>
+                    {{-- <td>{{ $row->location }}</td> --}}
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
                     <form action="{{action($destroy, $row->id)}}" method="POST">
@@ -48,7 +48,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Location</th>
+                  {{-- <th>Location</th> --}}
                   <th>Action</th>
                 </tr>
                 </tfoot>

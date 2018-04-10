@@ -22,7 +22,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Link</th>
+                  {{-- <th>Link</th> --}}
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -32,7 +32,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->link }}</td>
+                    {{-- <td>{{ $row->link }}</td> --}}
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
                     {{-- <form action="{{action($destroy, $row->id)}}" method="POST">
@@ -48,7 +48,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Link</th>
+                  {{-- <th>Link</th> --}}
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -76,9 +76,9 @@
     $('#dataTable').DataTable({
       'paging'      : false,
       'lengthChange': false,
-      'searching'   : false,
+      'searching'   : true,
       'ordering'    : true,
-      'info'        : false,
+      'info'        : true,
       'autoWidth'   : true
     })
   })
