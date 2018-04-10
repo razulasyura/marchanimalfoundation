@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>
-                    <a data-fancybox="gallery" href="{{ url($image.'original/'.$row->file)}}"><img width="30%" height="30%" src="{{ url($image.$row->file)}}"></a>
+                    <a data-fancybox="gallery" href="{{ url($image.'original/'.$row->file)}}"><img width="auto" height="30%" src="{{ url($image.$row->file)}}"></a>
                       {{-- <img width="20%" height="20%" src="{{url($image.$row->file)}}"></td> --}}
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
