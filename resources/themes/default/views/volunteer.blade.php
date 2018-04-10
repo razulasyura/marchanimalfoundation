@@ -29,8 +29,13 @@
               <table class="table table-striped table-schedule">
                 <thead>
                   <tr class="bg-theme-colored">
-                    <th>Nama</th>
-                    <th>Lokasi</th>
+                    @if (Request::segment(1)=='en')
+                      <th>Name</th>
+                      <th>Location</th>
+                    @else
+                      <th>Nama</th>
+                      <th>Lokasi</th>
+                    @endif
                   </tr>
                 </thead>
                 <tbody>
