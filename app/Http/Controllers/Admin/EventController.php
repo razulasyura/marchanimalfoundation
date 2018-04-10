@@ -178,7 +178,7 @@ class EventController extends Controller
         $event->name_en = $request->get('name_en');
         $event->host = $request->get('host');
         $event->description_name = $request->get('description_name');
-        $event->description_name_en = $request->get('description_en');
+        $event->description_name_en = $request->get('description_name_en');
         $event->description = $request->get('description');
         $event->description_en = $request->get('description_en');
         $event->time = $request->get('time');
