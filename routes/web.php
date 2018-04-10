@@ -53,6 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('album','Admin\AlbumController')->middleware('auth');
     Route::resource('gallery','Admin\GalleryController')->middleware('auth');
     Route::resource('media','Admin\MediaController')->middleware('auth');
+    Route::resource('setting','Admin\SettingController')->only(['index','store'])->middleware('auth');
 });
 
 

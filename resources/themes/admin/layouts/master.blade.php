@@ -287,7 +287,7 @@ desired effect
         <li><a href="{{ url('/admin/volunteer') }}"><i class="fa fa-link"></i> <span>Volunteer</span></a></li>
         <li><a href="{{ url('/admin/album') }}"><i class="fa fa-link"></i> <span>Album</span></a></li>
         <li><a href="{{ url('/admin/gallery') }}"><i class="fa fa-link"></i> <span>Gallery</span></a></li>
-        {{-- <li><a href="{{ url('/admin/contact') }}"><i class="fa fa-link"></i> <span>Contact</span></a></li> --}}
+        <li><a href="{{ url('/admin/setting') }}"><i class="fa fa-link"></i> <span>Contact</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
