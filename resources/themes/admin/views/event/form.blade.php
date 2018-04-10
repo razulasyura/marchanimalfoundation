@@ -118,10 +118,14 @@
           </div>
 
           <div class="form-group">
-            <label>Documentation Event <a href="#"><small>add Album</small></a></label>
+            <label>Documentation Event <a href="{{url('/admin/album')}}" class="btn btn-primary btn-xs" target="_blank"><small>add Album</small></a></label>
             <select class="form-control" name="album_id" required>
-              @php ($selected='')
               @foreach($album as $row)
+                @if(isset($data)) && ($row->id==$data->album_id))
+                {{$selected = 'selected'}}
+                @else
+                {{$selected = ''}}
+                @endif
                 <option value="{{ $row->id }}" {{$selected}}>{{ $row->name }}</option>
               @endforeach
             </select>

@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('css')
-<!-- DataTables -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css" />
 <link rel="stylesheet" href="{{ Theme::asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
 @stop
 
@@ -29,7 +28,9 @@
                 @foreach($data as $row)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td><img width="20%" height="20%" src="{{url($image.$row->file)}}"></td>
+                    <td>
+                    <a data-fancybox="gallery" href="{{ url($image.'original/'.$row->file)}}"><img width="30%" height="30%" src="{{ url($image.$row->file)}}"></a>
+                      {{-- <img width="20%" height="20%" src="{{url($image.$row->file)}}"></td> --}}
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
                     <form action="{{action($destroy, $row->id)}}" method="POST">
@@ -59,11 +60,12 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
 @stop
 @section('js')
+{{-- fancybox --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js"></script>
 <!-- DataTables -->
-
-
 <script src="{{ Theme::asset('bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{ Theme::asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <!-- page script -->

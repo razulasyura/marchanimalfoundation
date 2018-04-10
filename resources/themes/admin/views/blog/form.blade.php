@@ -45,7 +45,7 @@
           </div>
 
           <div class="form-group">
-            <label>Description (ID)</label>
+            <label>Description (ID) <a target="_blank" class="btn btn-warning btn-xs" href="{{ url('/admin/media') }}"><small>add image</small></a></label>
             <textarea id="editor" rows="4" name="description" class="form-control" required>{{ $data->description or ""}}</textarea>
           </div>
 
@@ -75,7 +75,7 @@
           </div>
 
           <div class="form-group">
-            <label>Description (EN)</label>
+            <label>Description (EN) <a target="_blank" class="btn btn-warning btn-xs" href="{{ url('/admin/media') }}"><small>add image</small></a></label>
             <textarea id="editor_en" rows="4" name="description_en" class="form-control" required>{{ $data->description_en or ""}}</textarea>
           </div>
           </div>
@@ -108,10 +108,15 @@
           </div>
 
           <div class="form-group">
-            <label>Documentation Event <a href="#"><small>add Album</small></a></label>
+            <label>Category Article</label>
             <select class="form-control" name="article_id" required>
               @php ($selected='')
               @foreach($article as $row)
+                @if($row->id==$data->article_id)
+                {{$selected = 'selected'}}
+                @else
+                {{$selected = ''}}
+                @endif
                 <option value="{{ $row->id }}" {{$selected}}>{{ $row->name }}</option>
               @endforeach
             </select>

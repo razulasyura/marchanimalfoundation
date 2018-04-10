@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Gallery extends Model
 {
     protected $fillable = [
-        'name', 'description','location','file','album_id'
+        'name', 'description','location','file','album_id','is_media'
     ];
 
     public function get()

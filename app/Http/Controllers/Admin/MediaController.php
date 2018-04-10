@@ -7,14 +7,13 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Theme;
 use App\Gallery;
-use App\Album;
 use Auth;
 use Alert;
 use Image;
 use File;
 // use Carbon\Carbon;
 
-class GalleryController extends Controller
+class MediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,16 +22,16 @@ class GalleryController extends Controller
      */
 
     protected $galleries;
-    var $mainPage = 'admin/gallery';
-    var $index = 'gallery/index';
-    var $form = 'gallery/form';
+    var $mainPage = 'admin/media';
+    var $index = 'media/index';
+    var $form = 'media/form';
     var $imageLocation = 'public/assets/themes/default/images/gallery/';
     
-    var $create = 'Admin\GalleryController@create';
-    var $store = 'Admin\GalleryController@store';
-    var $destroy = 'Admin\GalleryController@destroy';
-    var $edit = 'Admin\GalleryController@edit';
-    var $update = 'Admin\GalleryController@update';
+    var $create = 'Admin\MediaController@create';
+    var $store = 'Admin\MediaController@store';
+    var $destroy = 'Admin\MediaController@destroy';
+    var $edit = 'Admin\MediaController@edit';
+    var $update = 'Admin\MediaController@update';
 
     public function __construct(Gallery $gallery)
     {
@@ -45,8 +44,8 @@ class GalleryController extends Controller
         $create = $this->create;
         $destroy = $this->destroy;
         $edit = $this->edit;
-        $data = $this->galleries::All();
-        $pageTitle = 'List Gallery';
+        $data = $this->galleries::where('is_media','T')->orderBy('created_at','DESC')->paginate(12);
+        $pageTitle = 'List Media';
         $image = $this->imageLocation;
         return view($this->index,compact('data','edit','destroy','pageTitle','create','image'));
     }
@@ -58,12 +57,11 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $albums = New Album;
-        $album = $albums->all();
+        // $method = 'POST';
         $action = $this->store;
-        $pageTitle = 'Create Gallery';
+        $pageTitle = 'Create Media';
         $image = $this->imageLocation;
-        return view($this->form,compact('action','pageTitle','image','album'));
+        return view($this->form,compact('action','pageTitle','image'));
     }
 
     /**
@@ -84,14 +82,14 @@ class GalleryController extends Controller
         /* retrive data */
         $data = $request->except('file');
         $data['file'] = $filename = date('Ymdhis').'.jpg';
-        // dd($data);
+        $data['is_media'] = 'T';
         /* store data */
         $store = $this->galleries->create($data);
 
         /* redirect and notifiation */
         if($store){
             // upload image
-            $img = Image::make(Input::file('file'))->fit(450, 250)->save($this->imageLocation.$filename);
+            $img = Image::make(Input::file('file'))->fit(245, 135)->save($this->imageLocation.$filename);
             $imgOriginal = Image::make(Input::file('file'))->save($this->imageLocation.'original/'.$filename);
 
             // notice and return to page
@@ -123,13 +121,12 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $albums = New Album;
-        $album = $albums->all();
+        // $method = 'POST';
         $action = $this->update;
         $data = $this->galleries->findOrFail($id);
-        $pageTitle = 'Edit Gallery';
+        $pageTitle = 'Edit Media';
         $image = $this->imageLocation;
-        return view($this->form,compact('data','action','pageTitle','image','album'));
+        return view($this->form,compact('data','action','pageTitle','image'));
     }
 
     /**
@@ -152,8 +149,9 @@ class GalleryController extends Controller
         
         /* retrive data */
         $gallery->name = $request->get('name');
+        $gallery->name_en = $request->get('name_en');
         $gallery->description = $request->get('description');
-        $gallery->album_id = $request->get('album_id');
+        $gallery->description_en = $request->get('description_en');
         if($request->file('file')!=NULL){
             $gallery->file = $filename = date('Ymdhis').'.jpg';        
             $delete = File::delete($this->imageLocation.$oldFile);
