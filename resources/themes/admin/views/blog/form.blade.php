@@ -113,7 +113,7 @@
               @php ($selected='')
               @foreach($article as $row)
                 @if(isset($data))
-                  @if(($row->id==$data->album_id))
+                  @if(($row->id==$data->article_id))
                   {{$selected = 'selected'}}
                   @else
                   {{$selected = ''}}
