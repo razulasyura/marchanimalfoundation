@@ -160,7 +160,7 @@ class ProgramController extends Controller
         $program->name = $request->get('name');
         $program->name_en = $request->get('name_en');
         $program->description_name = $request->get('description_name');
-        $program->description_name_en = $request->get('description_en');
+        $program->description_name_en = $request->get('description_name_en');
         $program->description = $request->get('description');
         $program->description_en = $request->get('description_en');
         

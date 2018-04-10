@@ -35,10 +35,9 @@ class FrontController extends Controller
         // Load Theme
         Theme::init($this->theme);
         /* Change Language */
-        $language = request()->segment(1);
+        /* $language = request()->segment(1);
         Setting::set('language', $language);
-        // dd(request()->segment(1));
-        Setting::save();
+        Setting::save(); */
         // Page Title & Description
         $page_title = "Index";
         $page_description = "This is".$page_title." page";

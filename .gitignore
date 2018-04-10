@@ -8,6 +8,7 @@
 /public/assets/themes/default/less
 /public/assets/themes/default/video
 /storage/*.key
+/storage/settings.json
 /vendor
 /.idea
 /.vagrant
