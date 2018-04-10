@@ -112,10 +112,12 @@
             <select class="form-control" name="article_id" required>
               @php ($selected='')
               @foreach($article as $row)
-                @if($row->id==$data->article_id)
-                {{$selected = 'selected'}}
-                @else
-                {{$selected = ''}}
+                @if(isset($data))
+                  @if(($row->id==$data->album_id))
+                  {{$selected = 'selected'}}
+                  @else
+                  {{$selected = ''}}
+                  @endif
                 @endif
                 <option value="{{ $row->id }}" {{$selected}}>{{ $row->name }}</option>
               @endforeach
