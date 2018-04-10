@@ -141,5 +141,34 @@
 @stop
 @section('js')
 <script src="//cdn.ckeditor.com/4.9.1/full/ckeditor.js"></script>
-<script>CKEDITOR.replace('editor');CKEDITOR.replace('editor_en');</script>
+{{-- <script>CKEDITOR.replace('editor');CKEDITOR.replace('editor_en');</script> --}}
+<script>
+		CKEDITOR.replace( 'editor', {
+			// Define the toolbar groups as it is a more accessible solution.
+			toolbar: [
+				{ name: 'document', items: [ 'Source'] },
+        { name: 'clipboard', items: ['PasteText', 'PasteFromWord'] },
+        { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline'] },
+        { name: 'paragraph', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+        { name: 'links', items: [ 'Link', 'Unlink'] },
+        { name: 'insert', items: [ 'Image'] },
+        { name: 'styles', items: [ 'Font', 'FontSize' ] },
+        { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] }
+			],
+		});
+
+    CKEDITOR.replace( 'editor_en', {
+			// Define the toolbar groups as it is a more accessible solution.
+			toolbar: [
+				{ name: 'document', items: [ 'Source'] },
+        { name: 'clipboard', items: ['PasteText', 'PasteFromWord'] },
+        { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline'] },
+        { name: 'paragraph', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+        { name: 'links', items: [ 'Link', 'Unlink'] },
+        { name: 'insert', items: [ 'Image'] },
+        { name: 'styles', items: [ 'Font', 'FontSize' ] },
+        { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] }
+			],
+		});
+	</script>
 @stop
