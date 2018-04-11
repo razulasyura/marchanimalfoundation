@@ -582,7 +582,7 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h2 class="title text-black-666">Recent <span class="text-theme-colored"> Event</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+              {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> --}}
             </div>
           </div>
         </div>
