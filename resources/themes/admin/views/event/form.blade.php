@@ -20,7 +20,12 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-primary">
+          <div class="box-header  with-border">
+            <h3 class="box-title">Form {{Request::segment(2)}}</h3>
+          </div>
             <!-- /.box-header -->
+            
+          <div class="box-body">
             <!-- form start -->
           @if(isset($data))
             <form role="form" method="POST" action="{{ action($action, $data->id) }}" enctype="multipart/form-data">
@@ -32,7 +37,6 @@
           @if(isset($data))
           <input name="_method" type="hidden" value="PATCH">
           @endif
-          <div class="box-body">
 
           <div class="form-group">
             <label>Time (ID)</label>
@@ -136,9 +140,11 @@
 
           </div>
           <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+          <div class="box-footer">
+            <a href="{{ URL::previous() }}" class="btn btn-success"><i class="fa fa-arrow-circle-left "></i> Back</a>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash"></i> Delete</button>
+          </div>
             </form>
           </div>
           <!-- /.box -->

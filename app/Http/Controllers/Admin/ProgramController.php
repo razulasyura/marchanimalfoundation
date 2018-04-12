@@ -42,11 +42,10 @@ class ProgramController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->programs::where('is_deleted','F')->get();
         $pageTitle = 'List Program';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -126,12 +125,12 @@ class ProgramController extends Controller
      */
     public function edit($id)
     {
-        // $method = 'POST';
         $action = $this->update;
+        $destroy = $this->destroy;        
         $data = $this->programs->findOrFail($id);
         $pageTitle = 'Edit Program';
         $image = $this->imageOriginal;
-        return view($this->form,compact('data','action','pageTitle','image'));
+        return view($this->form,compact('data','action','destroy','pageTitle','image'));
     }
 
     /**

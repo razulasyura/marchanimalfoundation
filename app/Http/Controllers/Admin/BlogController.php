@@ -43,11 +43,10 @@ class BlogController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->blogs::where('is_deleted','F')->get();
         $pageTitle = 'List Article';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -134,10 +133,11 @@ class BlogController extends Controller
         $articles = New Article;
         $article = $articles->all();
         $action = $this->update;
+        $destroy = $this->destroy;
         $data = $this->blogs->findOrFail($id);
         $pageTitle = 'Edit Article';
         $image = $this->imageOriginal;
-        return view($this->form,compact('data','action','pageTitle','image','article'));
+        return view($this->form,compact('data','action','pageTitle','image','article','destroy'));
     }
 
     /**
