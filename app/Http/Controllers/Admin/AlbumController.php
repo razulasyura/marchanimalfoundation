@@ -37,11 +37,10 @@ class AlbumController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->albums::where('is_deleted','F')->get();
         $pageTitle = 'List Album';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -108,10 +107,11 @@ class AlbumController extends Controller
      */
     public function edit($id)
     {
+        $destroy = $this->destroy;
         $action = $this->update;
         $data = $this->albums->findOrFail($id);
         $pageTitle = 'Edit Album';
-        return view($this->form,compact('data','action','pageTitle'));
+        return view($this->form,compact('data','action','pageTitle','destroy'));
     }
 
     /**

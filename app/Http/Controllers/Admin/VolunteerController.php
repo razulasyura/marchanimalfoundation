@@ -37,11 +37,10 @@ class VolunteerController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->volunteers::All();
         $pageTitle = 'List Volunteer';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -109,9 +108,10 @@ class VolunteerController extends Controller
     {
         // $method = 'POST';
         $action = $this->update;
+        $destroy = $this->destroy;
         $data = $this->volunteers->findOrFail($id);
         $pageTitle = 'Edit Volunteer';
-        return view($this->form,compact('data','action','pageTitle'));
+        return view($this->form,compact('data','action','destroy','pageTitle'));
     }
 
     /**

@@ -20,8 +20,15 @@
         <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
+            
             <!-- /.box-header -->
-            <!-- form start -->
+            
+          <div class="box-header with-border">
+              <h3 class="box-title">Form {{Request::segment(2)}}</h3>
+          </div>
+
+          <div class="box-body">
+          <!-- form start -->
           @if(isset($data))
             <form role="form" method="POST" action="{{ action($action, $data->id) }}" enctype="multipart/form-data">
             <input name="_method" type="hidden" value="PATCH">
@@ -32,7 +39,6 @@
           @if(isset($data))
           <input name="_method" type="hidden" value="PATCH">
           @endif
-          <div class="box-body">
 
           <div class="form-group">
             <label>Name (ID)</label>
@@ -61,7 +67,9 @@
         <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-warning">
-            <!-- /.box-header -->
+            <div class="box-header with-border">
+              <h3 class="box-title">Form {{Request::segment(2)}}</h3>
+            </div>
           <div class="box-body">
 
           <div class="form-group">
@@ -127,7 +135,9 @@
           </div>
           <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{{ URL::previous() }}" class="btn btn-success"><i class="fa fa-arrow-circle-left "></i> Back</a>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash"></i> Delete</button>
               </div>
             </form>
           </div>
