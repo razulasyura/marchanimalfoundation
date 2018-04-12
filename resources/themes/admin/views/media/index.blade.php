@@ -12,15 +12,10 @@
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><a class="btn btn-primary" href="{{action($create)}}" onclick="return confirm('Are you sure you create new data ?');">Create New</a></h3>
-
-                  <div class="box-tools pull-right">
-                    {{-- <span class="label label-danger">8 New Members</span> --}}
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                    </button>
-                  </div>
+                  <h3 class="box-title">{{ $pageTitle }}</h3>
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="{{action($create)}}">Create New</a>
+                    </div>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
