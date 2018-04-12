@@ -42,7 +42,6 @@ class MediaController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->galleries::where('is_media','T')->orderBy('created_at','DESC')->paginate(12);
         $pageTitle = 'List Media';
