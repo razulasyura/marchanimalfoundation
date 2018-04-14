@@ -51,8 +51,10 @@ class FrontController extends Controller
         $program = $programs->all()->take(4);
         $events = New Event;
         $event = $events->where('is_deleted','F')->orderBy('created_at','DESC')->take(3)->get();
+        $blogs = New Blog;
+        $blog = $blogs->where('is_deleted','F')->where('is_featured','T')->orderBy('id','DESC')->take(2)->get();
         // Render View
-        return view(strtolower($page_title), compact('page_title','slide','program','event'));
+        return view(strtolower($page_title), compact('page_title','slide','program','event','blog'));
     }
 
     public function blog()
