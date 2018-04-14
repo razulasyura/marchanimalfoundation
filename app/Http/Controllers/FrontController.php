@@ -35,9 +35,9 @@ class FrontController extends Controller
         // Load Theme
         Theme::init($this->theme);
         /* Change Language */
-        /* $language = request()->segment(1);
+        $language = request()->segment(1);
         Setting::set('language', $language);
-        Setting::save(); */
+        Setting::save(); 
         // Page Title & Description
         $page_title = "Index";
         $page_description = "This is".$page_title." page";
@@ -50,7 +50,7 @@ class FrontController extends Controller
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;
-        $event = $events->where('is_deleted','F')->take(4)->get();
+        $event = $events->where('is_deleted','F')->orderBy('created_at','DESC')->take(3)->get();
         // Render View
         return view(strtolower($page_title), compact('page_title','slide','program','event'));
     }

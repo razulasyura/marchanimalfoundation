@@ -588,7 +588,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-              <div class="owl-carousel-3col owl-nav-top mb-sm-80" data-dots="true">
+              <div class="owl-carousel-3col owl-nav-top mb-sm-80" data-dots="false">
               @foreach($event as $row)
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
