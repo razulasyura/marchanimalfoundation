@@ -52,7 +52,7 @@ class FrontController extends Controller
         $events = New Event;
         $event = $events->where('is_deleted','F')->orderBy('created_at','DESC')->take(3)->get();
         $blogs = New Blog;
-        $blog = $blogs->where('is_deleted','F')->where('is_featured','T')->orderBy('id','DESC')->take(2)->get();
+        $blog = $blogs->where('is_deleted','F')->where('is_featured','T')->orderBy('id','DESC')->take(3)->get();
         // Render View
         return view(strtolower($page_title), compact('page_title','slide','program','event','blog'));
     }
@@ -229,7 +229,8 @@ class FrontController extends Controller
         
         /* Load Data */
         $galleries = new Gallery();
-        $gallery = $galleries->where('is_media','F')->orderBy('created_at','DESC')->paginate(9);
+        // $gallery = $galleries->where('is_media','F')->orderBy('created_at','DESC')->paginate(9);
+        $gallery = $galleries->orderBy('created_at','DESC')->paginate(9);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','gallery'));
     }
