@@ -5,10 +5,12 @@
           <div class="col-md-2">
             <div class="widget no-border m-0">
               <ul class="styled-icons icon-dark icon-theme-colored icon-sm sm-text-center">
+               <!-- 
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+		-->
               </ul>
             </div>
           </div>
