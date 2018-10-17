@@ -299,13 +299,13 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        {{$pageTitle or ''}}
-        {{-- <small>Optional description</small> --}}
+        {{ ucfirst(Request::segment(2)) }} 
+        {{-- <small>{{ isset($page_description) ? $page_description : 'Description' }}</small> --}}
       </h1>
-     {{--  <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol> --}}
+      <ol class="breadcrumb">
+        <li><a href="{{ url('admin/'.strtolower(Request::segment(2))) }}"><i class="fa fa-dashboard"></i> {{ ucfirst(Request::segment(2)) }}</a></li>
+        <li class="active">{{ ucfirst(Request::segment(3)) }}</li>
+      </ol>
     </section>
 
     <!-- Main content -->
@@ -427,5 +427,39 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+
+{{-- confirm delete --}}
+@if(isset($destroy))
+  <div class="modal fade" id="modal-delete" tabIndex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            ×
+          </button>
+          <h4 class="modal-title">Please Confirm</h4>
+        </div>
+        <div class="modal-body">
+          <p class="lead">
+            <i class="fa fa-question-circle"></i>  
+            Are you sure you want to remove this data ?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <form method="POST" action="{{action($destroy, $data->id)}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-danger">
+              <i class="fa fa-times-circle"></i> Yes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+@endif
+
 </body>
 </html>

@@ -11,9 +11,11 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-              {{-- <h3 class="box-title">{{ $pageTitle }}</h3> --}}
-              <a class="btn btn-primary" href="{{action($create)}}" onclick="return confirm('Are you sure you create new data ?');">Create New</a>
+            <div class="box-header with-border">
+              <h3 class="box-title">{{ $pageTitle }}</h3>
+                <div class="pull-right">
+                    <a class="btn btn-success" href="{{action($create)}}">Create New</a>
+                </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -22,7 +24,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Description</th>
+                  {{-- <th>Description</th> --}}
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -32,14 +34,14 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>{{ $row->description }}</td>
+                    {{-- <td>{{ $row->description }}</td> --}}
                     <td>
                     <a class="btn btn-primary" href="{{action($edit,$row->id)}}" onclick="return confirm('Are you sure you want to edit this data ?');">Edit</a>
-                    <form action="{{action($destroy, $row->id)}}" method="POST">
+                   {{--  <form action="{{action($destroy, $row->id)}}" method="POST">
                       {{csrf_field()}}
                       <input name="_method" type="hidden" value="DELETE">
                       <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure you want to edit this data ?');">Delete</button>
-                    </form>
+                    </form> --}}
                     </td>
                 </tr>
                 @endforeach
@@ -48,7 +50,7 @@
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>Description</th>
+                  {{-- <th>Description</th> --}}
                   <th>Action</th>
                 </tr>
                 </tfoot>

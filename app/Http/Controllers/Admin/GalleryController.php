@@ -43,12 +43,11 @@ class GalleryController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->galleries::All();
         $pageTitle = 'List Gallery';
         $image = $this->imageLocation;
-        return view($this->index,compact('data','edit','destroy','pageTitle','create','image'));
+        return view($this->index,compact('data','edit','pageTitle','create','image'));
     }
 
     /**
@@ -126,10 +125,11 @@ class GalleryController extends Controller
         $albums = New Album;
         $album = $albums->all();
         $action = $this->update;
+        $destroy = $this->destroy;
         $data = $this->galleries->findOrFail($id);
         $pageTitle = 'Edit Gallery';
         $image = $this->imageLocation;
-        return view($this->form,compact('data','action','pageTitle','image','album'));
+        return view($this->form,compact('data','action','destroy','pageTitle','image','album'));
     }
 
     /**

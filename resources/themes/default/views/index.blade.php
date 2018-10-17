@@ -582,13 +582,40 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <h2 class="title text-black-666">Recent <span class="text-theme-colored"> Event</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+              {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p> --}}
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-              <div class="owl-carousel-3col owl-nav-top mb-sm-80" data-dots="true">
+              <div class="owl-carousel-3col owl-nav-top mb-sm-80" data-dots="false">
+              {{-- article --}}
+              @foreach($blog as $row)
+              <div class="item">
+                <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
+                  <div class="entry-header">
+                    <div class="post-thumb thumb"> <img src="{{ Theme::asset('images/article/'.$row->file) }}" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="entry-meta meta-absolute text-center pl-15 pr-15">
+                    <div class="display-table">
+                      <div class="display-table-cell">
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="entry-content border-1px p-20">
+                  <h5 class="entry-title mt-0 pt-0"><a href="{{ url(Setting::get('language').'/blog/'.$row->id) }}">@if (Request::segment(1)=='en') {{ $row->name_en }} @else {{ $row->name }} @endif</a></h5>
+                  <p class="text-left mb-20 mt-15 font-13">@if (Request::segment(1)=='en') {{ $row->description_name_en }} @else {{ $row->description_name }} @endif</p>
+                    <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="{{ url(Setting::get('language').'/blog/'.$row->id) }}">Read more</a>
+                    <ul class="list-inline entry-date pull-right font-12 mt-5">
+                     
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                </article>
+              </div> 
+              @endforeach  
+
+              {{-- event --}}
               @foreach($event as $row)
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
@@ -617,7 +644,8 @@
                   </div>
                 </article>
               </div> 
-              @endforeach     
+              @endforeach
+                 
             </div>
           </div>
         </div>

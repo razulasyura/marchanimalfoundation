@@ -18,6 +18,9 @@
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Form {{Request::segment(2)}}</h3>
+            </div>
             <!-- /.box-header -->
             <!-- form start -->
           @if(isset($data))
@@ -42,7 +45,9 @@
           </div>
           </div>
           <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="{{ URL::previous() }}" class="btn btn-success"><i class="fa fa-arrow-circle-left "></i> Back</a>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash"></i> Delete</button>
           </div>
             </form>
           <!-- /.box-body -->

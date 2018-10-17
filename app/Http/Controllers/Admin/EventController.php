@@ -45,11 +45,10 @@ class EventController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->events::where('is_deleted','F')->get();
         $pageTitle = 'List Event';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -139,10 +138,11 @@ class EventController extends Controller
         $albums = New Album;
         $album = $albums->all();
         $action = $this->update;
+        $destroy = $this->destroy;
         $data = $this->events->findOrFail($id);
         $pageTitle = 'Edit Event';
         $image = $this->imageOriginal;
-        return view($this->form,compact('data','action','pageTitle','image','album'));
+        return view($this->form,compact('data','action','destroy','pageTitle','image','album'));
     }
 
     /**
@@ -178,7 +178,7 @@ class EventController extends Controller
         $event->name_en = $request->get('name_en');
         $event->host = $request->get('host');
         $event->description_name = $request->get('description_name');
-        $event->description_name_en = $request->get('description_en');
+        $event->description_name_en = $request->get('description_name_en');
         $event->description = $request->get('description');
         $event->description_en = $request->get('description_en');
         $event->time = $request->get('time');

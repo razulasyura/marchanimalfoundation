@@ -42,11 +42,10 @@ class SlideController extends Controller
     public function index()
     {
         $create = $this->create;
-        $destroy = $this->destroy;
         $edit = $this->edit;
         $data = $this->slides::All();
         $pageTitle = 'List Slide';
-        return view($this->index,compact('data','edit','destroy','pageTitle','create'));
+        return view($this->index,compact('data','edit','pageTitle','create'));
     }
 
     /**
@@ -123,10 +122,11 @@ class SlideController extends Controller
     {
         // $method = 'POST';
         $action = $this->update;
+        $destroy = $this->destroy;
         $data = $this->slides->findOrFail($id);
         $pageTitle = 'Edit Slide';
         $image = $this->imageOriginal;
-        return view($this->form,compact('data','action','pageTitle','image'));
+        return view($this->form,compact('data','action','destroy','pageTitle','image'));
     }
 
     /**

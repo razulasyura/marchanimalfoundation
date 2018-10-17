@@ -37,8 +37,7 @@ class FrontController extends Controller
         /* Change Language */
         $language = request()->segment(1);
         Setting::set('language', $language);
-        // dd(request()->segment(1));
-        Setting::save();
+        Setting::save(); 
         // Page Title & Description
         $page_title = "Index";
         $page_description = "This is".$page_title." page";
@@ -51,9 +50,11 @@ class FrontController extends Controller
         $programs = New Program;
         $program = $programs->all()->take(4);
         $events = New Event;
-        $event = $events->where('is_deleted','F')->take(4)->get();
+        $event = $events->where('is_deleted','F')->orderBy('created_at','DESC')->take(3)->get();
+        $blogs = New Blog;
+        $blog = $blogs->where('is_deleted','F')->where('is_featured','T')->orderBy('id','DESC')->take(3)->get();
         // Render View
-        return view(strtolower($page_title), compact('page_title','slide','program','event'));
+        return view(strtolower($page_title), compact('page_title','slide','program','event','blog'));
     }
 
     public function blog()
@@ -228,7 +229,8 @@ class FrontController extends Controller
         
         /* Load Data */
         $galleries = new Gallery();
-        $gallery = $galleries->where('is_media','F')->orderBy('created_at','DESC')->paginate(9);
+        // $gallery = $galleries->where('is_media','F')->orderBy('created_at','DESC')->paginate(9);
+        $gallery = $galleries->orderBy('created_at','DESC')->paginate(9);
         // Render View
         return view(strtolower($page_title), compact('page_title','breadcrumbs','gallery'));
     }

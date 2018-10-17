@@ -10,7 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => Setting::get('language')], function () {
+Route::group(['prefix' => '/'], function () {
+    // Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
+    Route::get( '/home', ['as' => 'home', 'uses' => 'FrontController@index']);
+    Route::get( '/blog', ['as' => 'blog', 'uses' => 'FrontController@blog']);
+    Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@blog_detail']);
+    Route::get( '/organizer', ['as' => 'organizer', 'uses' => 'FrontController@organizer']);
+    Route::get( '/volunteer', ['as' => 'volunteer', 'uses' => 'FrontController@volunteer']);
+    Route::get( '/about', ['as' => 'about', 'uses' => 'FrontController@about']);
+    Route::get( '/program', ['as' => 'program', 'uses' => 'FrontController@program']);
+    Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']);
+    Route::get( '/blank', ['as' => 'blank', 'uses' => 'FrontController@about']);
+    Route::get( '/contact', ['as' => 'contact', 'uses' => 'FrontController@contact']);
+    Route::get( '/event', ['as' => 'event', 'uses' => 'FrontController@event']);
+    Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
+    Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']);
+});
+
+Route::group(['prefix' => 'en'], function () {
+    // Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
+    Route::get( '/home', ['as' => 'home', 'uses' => 'FrontController@index']);
+    Route::get( '/blog', ['as' => 'blog', 'uses' => 'FrontController@blog']);
+    Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@blog_detail']);
+    Route::get( '/organizer', ['as' => 'organizer', 'uses' => 'FrontController@organizer']);
+    Route::get( '/volunteer', ['as' => 'volunteer', 'uses' => 'FrontController@volunteer']);
+    Route::get( '/about', ['as' => 'about', 'uses' => 'FrontController@about']);
+    Route::get( '/program', ['as' => 'program', 'uses' => 'FrontController@program']);
+    Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']);
+    Route::get( '/blank', ['as' => 'blank', 'uses' => 'FrontController@about']);
+    Route::get( '/contact', ['as' => 'contact', 'uses' => 'FrontController@contact']);
+    Route::get( '/event', ['as' => 'event', 'uses' => 'FrontController@event']);
+    Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
+    Route::get( '/gallery', ['as' => 'gallery', 'uses' => 'FrontController@gallery']);
+});
+
+Route::group(['prefix' => 'id'], function () {
     // Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
     Route::get( '/home', ['as' => 'home', 'uses' => 'FrontController@index']);
     Route::get( '/blog', ['as' => 'blog', 'uses' => 'FrontController@blog']);
@@ -31,9 +65,9 @@ Route::group(['prefix' => Setting::get('language')], function () {
 Route::get( '/', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/id', ['as' => '/', 'uses' => 'FrontController@index']);
 Route::get( '/en', ['as' => '/', 'uses' => 'FrontController@index']);
-Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@blog_detail']);
+/* Route::get( '/blog/{blog}', ['as' => 'blog.detail', 'uses' => 'FrontController@blog_detail']);
 Route::get( '/event/{event}', ['as' => 'events.detail', 'uses' => 'FrontController@event_detail']);
-Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']);
+Route::get( '/program/{program}', ['as' => 'program.detail', 'uses' => 'FrontController@program_detail']); */
 
 
 
